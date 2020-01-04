@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.Pedir_dinero">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="400.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Seleccionar contacto">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="400.0" prefWidth="400.0">
+                                 <children>
+                                    <Label layoutY="40.0" text="Seleccione el contacto de su lista" />
+                                    <ComboBox layoutX="204.0" layoutY="37.0" prefWidth="150.0" />
+                                    <Label layoutX="55.0" layoutY="95.0" text="Seleccione la cantidad" />
+                                    <TextField layoutX="225.0" layoutY="95.0" prefHeight="25.0" prefWidth="100.0" />
+                                    <Label layoutX="328.0" layoutY="100.0" text="\$" />
+                                    <Button layoutX="169.0" layoutY="176.0" mnemonicParsing="false" text="Aceptar" />
+                                    <Button fx:id="cancelar_con2" layoutX="167.0" layoutY="302.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Introducir número">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="400.0" prefWidth="400.0">
+                                 <children>
+                                    <Label layoutX="6.0" layoutY="36.0" text="Introduzca el número de teléfono" />
+                                    <TextField layoutX="212.0" layoutY="36.0" />
+                                    <Label layoutX="198.0" layoutY="88.0" text="o" />
+                                    <Label layoutX="9.0" layoutY="122.0" text="Introduzca el nombre de usuario" />
+                                    <TextField layoutX="216.0" layoutY="118.0" />
+                                    <Label layoutX="46.0" layoutY="189.0" text="Introduzca la cantidad" />
+                                    <TextField layoutX="235.0" layoutY="186.0" prefHeight="25.0" prefWidth="96.0" />
+                                    <Label layoutX="332.0" layoutY="190.0" text="\$" />
+                                    <Button layoutX="177.0" layoutY="252.0" mnemonicParsing="false" text="Aceptar" />
+                                    <Button fx:id="cancelar_sin2" layoutX="175.0" layoutY="314.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

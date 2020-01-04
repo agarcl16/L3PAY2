@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.L3PAY">
+   <left>
+      <AnchorPane prefHeight="600.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="userName" layoutX="40.0" layoutY="35.0" text="usuario" />
+            <Label layoutX="45.0" layoutY="52.0" text="saldo" />
+            <Button layoutX="257.0" layoutY="69.0" mnemonicParsing="false" onAction="#sendMoney" text="Enviar dinero" />
+            <Button layoutX="260.0" layoutY="106.0" mnemonicParsing="false" onAction="#pedirDinero" text="Pedir dinero" />
+            <Button layoutX="264.0" layoutY="143.0" mnemonicParsing="false" onAction="#crearBote" text="Crear bote" />
+            <Button layoutX="79.0" layoutY="232.0" mnemonicParsing="false" onAction="#ingresar" text="Ingresar dinero" />
+            <Button layoutX="79.0" layoutY="275.0" mnemonicParsing="false" onAction="#enviar" text="Enviar dinero a la cuenta" />
+            <Label layoutX="178.0" layoutY="352.0" text="¿Todavía no has vinculado tu cuenta bancaria?" />
+            <Button layoutX="252.0" layoutY="397.0" mnemonicParsing="false" onAction="#vincular" text="Vincular cuenta" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="372.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+            	<image>
+      		<Image url="/images/logoL3PAY.jpeg" />
+      	</image>
+      </ImageView>
+            <Button fx:id="cancelar_l3pay" layoutX="257.0" layoutY="512.0" mnemonicParsing="false" onAction="#cancel" text="Cerrar Sesión" />
+            <Button layoutX="352.0" layoutY="257.0" mnemonicParsing="false" onAction="#gesPot" text="Gestionar bote existente" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

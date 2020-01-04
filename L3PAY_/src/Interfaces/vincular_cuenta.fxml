@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.VinculacionController">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="148.0" layoutY="31.0" text="VINCULAR CUENTA" />
+            <Label layoutX="112.0" layoutY="67.0" text="Seleccione una entidad de la lista" />
+            <Accordion layoutX="99.0" layoutY="94.0" />
+            <ChoiceBox fx:id="listaBancos" layoutX="125.0" layoutY="94.0" prefWidth="150.0" />
+            <Button fx:id="cancelar_vin" layoutX="169.0" layoutY="343.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+            <Label layoutX="14.0" layoutY="149.0" text="Número de cuenta" />
+            <Label layoutX="29.0" layoutY="200.0" text="Clave secreta" />
+            <TextField layoutX="126.0" layoutY="145.0" prefHeight="25.0" prefWidth="258.0" />
+            <TextField layoutX="215.0" layoutY="196.0" prefHeight="25.0" prefWidth="75.0" />
+            <Button layoutX="171.0" layoutY="255.0" mnemonicParsing="false" text="Vincular" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
