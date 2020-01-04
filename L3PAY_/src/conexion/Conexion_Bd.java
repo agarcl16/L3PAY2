@@ -10,6 +10,7 @@ public class Conexion_Bd {
 	
 	public static Connection getConnection() {
 		
+		
 		try {
 			
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
