@@ -12,6 +12,7 @@ import javafx.fxml.Initializable;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class VinculacionController implements Initializable {
@@ -22,6 +23,11 @@ public class VinculacionController implements Initializable {
 	
 	@FXML
 	public Button cancelar_vin;
+	@FXML
+	public TextField numCuenta;
+	@FXML
+	public TextField claveCuenta;
+	
 	
 	public void initialize(URL url, ResourceBundle rb) {
 		loadData();
@@ -39,6 +45,11 @@ public class VinculacionController implements Initializable {
 	public void cancel(ActionEvent event) {
 		Stage stage = (Stage) cancelar_vin.getScene().getWindow();
 		stage.close();
+	}
+	
+	@FXML
+	public void vincular(ActionEvent event) {
+		System.out.println("hola");
 	}
 	
 }

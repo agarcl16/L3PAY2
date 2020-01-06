@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class MainController {
 	
 	private Stage primaryStage = new Stage();
-	
+	private Registro registro = new Registro();
 	@FXML
 	private Label myMessage2;
 	@FXML
@@ -54,6 +54,7 @@ public class MainController {
 	}
 	
 	public void iniciarSesion(ActionEvent event) throws Exception {
+		//habria que comprobar en toda la base de datos
 		if(usuario.getText().equals("lanerin") && contrasenia.getText().equals("Alex1990-")) {
 			myMessage2.setText("Sign in Success");
 				Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/L3PAY.fxml"));
@@ -78,7 +79,13 @@ public class MainController {
 			Mymessage.setText("Sign up Failed");
 		}
 		else {
-			Mymessage.setText("Sign up Success");
+			if(registro.aniadirPersona(name, surname, personalID, number, user, password)){
+				Mymessage.setText("Sign up Success");
+			}
+			else {
+				Mymessage.setText("This user alredy exists");
+			}
+			
 		}
 	}
 	public boolean comprobacionID(char a) {
