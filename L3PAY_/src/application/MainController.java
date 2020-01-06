@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class MainController {
 	
 	private Stage primaryStage = new Stage();
-	private Registro registro = new Registro();
+	public Registro registro = new Registro();
 	@FXML
 	private Label myMessage2;
 	@FXML
@@ -66,6 +66,10 @@ public class MainController {
 		else {
 			myMessage2.setText("Sign in Failed");
 		}
+	}
+	
+	public String getUser() {
+		return this.usuario.getText();
 	}
 	
 	public void registro(ActionEvent event) throws Exception{

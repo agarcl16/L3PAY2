@@ -49,7 +49,7 @@ public class VinculacionController implements Initializable {
 	
 	@FXML
 	public void vincular(ActionEvent event) {
-		System.out.println("hola");
+		
 	}
 	
 }
