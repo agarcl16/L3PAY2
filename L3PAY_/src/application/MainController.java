@@ -106,6 +106,11 @@ public class MainController {
 		password.setText(null);
 	}
 	
+	public void limpiarCajasInicio() {
+		usuario.setText(null);
+		contrasenia.setText(null);
+	}
+	
 	public boolean comprobacionID(char a) {
 		int i;
 		for(i=65;i<91;i++) {
