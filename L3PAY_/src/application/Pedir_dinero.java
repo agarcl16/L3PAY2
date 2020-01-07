@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 public class Pedir_dinero {
+	public procs controlador2;
 	
 	@FXML
 	public Button cancelar_con2;
@@ -45,12 +46,13 @@ public class Pedir_dinero {
 	}
 	@FXML
 	public void pedirDinero1(ActionEvent event) {
+		controlador2 = new procs();
 		if(name1.getText().equals("")||cost1.getText().equals("")){
 			mensaje1.setText("error");
 		}
 		else {
 			//comprobamos con un if si existe el usuario
-			boolean comprobacion = search(name1.getText());
+			boolean comprobacion = controlador2.search(name1.getText());
 			if(comprobacion){
 				mensaje1.setText("error");
 			}
@@ -61,12 +63,13 @@ public class Pedir_dinero {
 	}
 	@FXML
 	public void pedirDinero2(ActionEvent event) {
+		controlador2 = new procs();
 		if((name2.getText().equals("")||(cost2.getText().equals("")&&phone2.getText().contentEquals("")))){
 			mensaje2.setText("error");
 		}
 		else {
 			//comprobamos con un if si existe el usuario
-			boolean comprobacion = search(name2.getText());
+			boolean comprobacion = controlador2.search(name2.getText());
 			if(comprobacion){
 				mensaje2.setText("error");
 			}
