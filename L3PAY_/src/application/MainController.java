@@ -18,6 +18,7 @@ public class MainController {
 	
 	private Stage primaryStage = new Stage();
 	public Registro registro = new Registro();
+	public InicioSesion inicio = new InicioSesion();
 	@FXML
 	private Label myMessage2;
 	@FXML
@@ -56,7 +57,7 @@ public class MainController {
 	public void iniciarSesion(ActionEvent event) throws Exception {
 		//habria que comprobar en toda la base de datos
 		boolean comprobacion;
-		
+		comprobacion = inicio.accesoUsuario(usuario.getText(), contrasenia.getText());
 		if(usuario.getText().equals("lanerin") && contrasenia.getText().equals("Alex1990-")) {
 			myMessage2.setText("Sign in Success");
 				Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/L3PAY.fxml"));

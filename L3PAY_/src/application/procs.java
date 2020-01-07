@@ -50,6 +50,11 @@ public class procs {
 			
 			
 		}*/
+		
+		public String searchPassword(String userName){
+			return null;
+		}
+		
 		public boolean search(String username) {
 			Connection con = null;
 			try {
