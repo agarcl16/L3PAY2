@@ -15,7 +15,8 @@ public class Registro {
 	
 	public boolean aniadirPersona(String name, String surname, String personalID, String number, String user, String password) throws Exception {
 		boolean solucion;
-		/*if(this.numero == 0) {
+		controlador = new procs();
+		if(this.numero == 0) {
 			
 			solucion = controlador.add(name, surname, personalID, number, user, password);
 			if(solucion == false) {
@@ -39,9 +40,6 @@ public class Registro {
 			}
 			this.numero++;
 			return true;
-		}*/
-		controlador = new procs();
-		solucion = controlador.add(name, surname, personalID, number, user, password);
-		return solucion;
+		}
 	}
 }
