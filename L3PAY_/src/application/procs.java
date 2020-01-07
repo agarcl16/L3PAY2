@@ -2,7 +2,7 @@ package application;
 
 
 
-import java.sql.CallableStatement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -23,13 +23,22 @@ public class procs {
 			try {
 				
 				Class.forName("com.mysql.jdbc.Driver");
-				cn= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/aplicacion;databaseName=users","inso","123");
+				cn= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/aplicacion;databaseName=users","root","1234");
 				
 			}catch (Exception e) {
 				
 				cn=null;
 			}
 			
+			if(cn!=null) {
+				
+				System.out.println("conectado");
+				System.out.println(cn);
+			}else {
+				
+				System.out.println("desconectado");
+				
+			}
 			return cn;
 		}
 	
