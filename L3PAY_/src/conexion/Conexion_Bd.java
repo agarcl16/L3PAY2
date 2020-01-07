@@ -11,7 +11,7 @@ public class Conexion_Bd {
 		try {
 			
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-			cn=DriverManager.getConnection("jdbc:sqlserver://LAPTOP-AQVCQBRF\\SQLEXPRESS:50663;databaseName=Users","inso","123");
+			cn= (Connection) DriverManager.getConnection("jdbc:sqlserver://LAPTOP-AQVCQBRF\\SQLEXPRESS:50663;databaseName=Users","inso","123");
 			
 		}catch (Exception e) {
 			
