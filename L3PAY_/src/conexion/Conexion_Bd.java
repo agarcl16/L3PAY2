@@ -3,13 +3,10 @@ package conexion;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
-
 public class Conexion_Bd {
 	
-	private static Connection cn;
-	
 	public static Connection getConnection() {
-		
+		Connection cn = null;
 		
 		try {
 			
