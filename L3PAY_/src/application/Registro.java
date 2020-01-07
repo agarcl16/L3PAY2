@@ -9,11 +9,18 @@ public class Registro {
 	public procs controlador;
 	private int numero;
 	public Registro() {
+		
 		this.numero = 0;
 	}
+	
 	public boolean aniadirPersona(String name, String surname, String personalID, String number, String user, String password) throws Exception {
+		
+		System.out.println("prueba");
 		if(this.numero == 0) {
+			
+			System.out.println("prueba");
 			if(!controlador.add(name, surname, personalID, number, user, password)) {
+				
 				return false;
 			}
 			this.numero++;

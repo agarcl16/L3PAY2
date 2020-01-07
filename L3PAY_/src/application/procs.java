@@ -99,7 +99,10 @@ public class procs {
 		}
 
 		public boolean add(String name, String surname, String personalID, String number, String user, String password) throws Exception{
+			
+			System.out.println("prueba");
 			Connection con = null;
+		
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO Users (dni,username,name,surname,phonenumber,password) VALUES(?,?,?,?,?,?)");
