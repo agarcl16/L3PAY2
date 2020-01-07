@@ -58,7 +58,7 @@ public class MainController {
 		//habria que comprobar en toda la base de datos
 		boolean comprobacion;
 		comprobacion = inicio.accesoUsuario(usuario.getText(), contrasenia.getText());
-		if(usuario.getText().equals("lanerin") && contrasenia.getText().equals("Alex1990-")) {
+		if(comprobacion) {
 			myMessage2.setText("Sign in Success");
 				Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/L3PAY.fxml"));
 				Scene scene = new Scene(root,600,600);

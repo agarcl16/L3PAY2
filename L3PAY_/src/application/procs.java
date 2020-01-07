@@ -61,6 +61,21 @@ public class procs {
 		}*/
 		
 		public String searchPassword(String userName){
+			Connection con = null;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
+				ps.setString(1, userName);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					return rs.getString("password");
+				}
+				else {
+					return null;
+				}
+			}catch(Exception e) {
+				System.err.println("Error al buscar");
+			}	
 			return null;
 		}
 		
