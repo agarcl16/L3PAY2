@@ -22,8 +22,8 @@ public class procs {
 			
 			try {
 				
-				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-				cn= (Connection) DriverManager.getConnection("jdbc:sqlserver://LAPTOP-AQVCQBRF\\SQLEXPRESS:50663;databaseName=Users","inso","123");
+				Class.forName("com.mysql.jdbc.Driver");
+				cn= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/aplicacion;databaseName=users","inso","123");
 				
 			}catch (Exception e) {
 				
@@ -49,31 +49,27 @@ public class procs {
 			entrada.execute();
 			
 			
-		}
-		public int search(String username) {
-			
-			int positionUser=-1;
-			int i=0;
-			boolean encontrado=false;
-			
-			while(i!=NuevoUsuario.length) {
-				
-				if(NuevoUsuario[i]!=null && encontrado == false) {
-		
-					if(name.contentEquals(NuevoUsuario[i].username)) {
-						positionKid = i;
-						encontrado=true;
-					}else {
-
-						encontrado=false;
-					}
+		}*/
+		public boolean search(String username) {
+			Connection con = null;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
+				ps.setString(1, username);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					return true;
 				}
-				i++;
-			}
-			return positionUser;	
+				else {
+					return false;
+				}
+			}catch(Exception e) {
+				System.err.println("Error al buscar");
+			}	
+			return false;
 		}
 		
-		public void remove(user){
+		/*public void remove(user){
 
 			int position = search(users.username);
 			int contador=0;
@@ -100,12 +96,11 @@ public class procs {
 
 		public boolean add(String name, String surname, String personalID, String number, String user, String password) throws Exception{
 			
-			System.out.println("prueba");
 			Connection con = null;
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("INSERT INTO Users (dni,username,name,surname,phonenumber,password) VALUES(?,?,?,?,?,?)");
+				ps = con.prepareStatement("INSERT INTO users (dni,username,name,surname,phonenumber,password) VALUES(?,?,?,?,?,?)");
 				
 				ps.setString(1,personalID);
 				ps.setString(2,user);

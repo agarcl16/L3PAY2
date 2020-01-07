@@ -55,6 +55,8 @@ public class MainController {
 	
 	public void iniciarSesion(ActionEvent event) throws Exception {
 		//habria que comprobar en toda la base de datos
+		boolean comprobacion;
+		
 		if(usuario.getText().equals("lanerin") && contrasenia.getText().equals("Alex1990-")) {
 			myMessage2.setText("Sign in Success");
 				Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/L3PAY.fxml"));
@@ -91,7 +93,18 @@ public class MainController {
 			}
 			
 		}
+		limpiarCajas(); 
 	}
+	
+	public void limpiarCajas() {
+		name.setText(null);
+		surname.setText(null);
+		personalID.setText(null);
+		number.setText(null);
+		user.setText(null);
+		password.setText(null);
+	}
+	
 	public boolean comprobacionID(char a) {
 		int i;
 		for(i=65;i<91;i++) {

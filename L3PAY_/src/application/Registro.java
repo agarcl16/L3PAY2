@@ -16,6 +16,7 @@ public class Registro {
 	public boolean aniadirPersona(String name, String surname, String personalID, String number, String user, String password) throws Exception {
 		boolean solucion;
 		controlador = new procs();
+		boolean comprobacion;
 		if(this.numero == 0) {
 			
 			solucion = controlador.add(name, surname, personalID, number, user, password);
@@ -26,14 +27,11 @@ public class Registro {
 			return true;
 		}
 		else {
-			int i;
-			for(i=0; i<this.numero;i++ ) {
-				//aqui se comprueba toda la lista si concuerda con alguno
-				if(true) {
+			comprobacion = controlador.search(user);
+			
+				if(comprobacion = true) {
 					return false;
 				}
-			}
-			//Si llega aqui es que hay que aniadirlo
 			solucion = controlador.add(name, surname, personalID, number, user, password);
 			if(solucion == false) {
 				return false;
