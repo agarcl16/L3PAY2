@@ -72,4 +72,19 @@ public class procs {
 				throw new Exception("ERROR:" +/*user.username*/  + " doesnt not exist.");
 			}
 		}
+
+		public void add(user) throws Exception{
+			
+		    if(search(user.username)() == true) { 
+				
+				throw new Exception("ERROR: user already exists.");
+
+		    /*En caso de que se pueda anhadir correctamente*/
+			else {
+				user[next] = new user;
+				next = next + 1;
+			}
+		}
+
+
 }
