@@ -14,13 +14,11 @@ public class Registro {
 	}
 	
 	public boolean aniadirPersona(String name, String surname, String personalID, String number, String user, String password) throws Exception {
-		
-		System.out.println("prueba");
+		boolean solucion;
 		if(this.numero == 0) {
 			
-			System.out.println("prueba");
-			if(!controlador.add(name, surname, personalID, number, user, password)) {
-				
+			solucion = controlador.add(name, surname, personalID, number, user, password);
+			if(solucion == false) {
 				return false;
 			}
 			this.numero++;
@@ -35,7 +33,8 @@ public class Registro {
 				}
 			}
 			//Si llega aqui es que hay que aniadirlo
-			if(!controlador.add(name, surname, personalID, number, user, password)) {
+			solucion = controlador.add(name, surname, personalID, number, user, password);
+			if(solucion == false) {
 				return false;
 			}
 			this.numero++;

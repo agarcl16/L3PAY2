@@ -33,7 +33,7 @@ public class procs {
 			return cn;
 		}
 	
-		public static void NuevoUsuario(String dni,String username,String name,String surname,String phonenumber,String email,String fechaNacimiento,String password)throws SQLException{
+	/*	public static void NuevoUsuario(String dni,String username,String name,String surname,String phonenumber,String email,String fechaNacimiento,String password)throws SQLException{
 		
 			CallableStatement entrada = Conexion_Bd.getConnection().prepareCall("{call NuevoUsuario(?,?,?,?,?,?,?,?)}");
 			
@@ -78,14 +78,14 @@ public class procs {
 			int position = search(users.username);
 			int contador=0;
 			
-			for(int i=0; i</*Lista de users.username*/; i++) {
-				if(/*Lista de users.username*/[i]!=null) {
+			for(int i=0; i<; i++) {
+				if([i]!=null) {
 					contador++;
 				}
 			}
 			
 			if(position!=-1) { 
-				/*Lista de users.username*/[position] = null;
+				[position] = null;
 				reOrder();
 				next--;
 			}else if(contador==0) { 
@@ -94,15 +94,15 @@ public class procs {
 			}
 			else { 
 
-				throw new Exception("ERROR:" +/*user.username*/  + " doesnt not exist.");
+				throw new Exception("ERROR:" +  + " doesnt not exist.");
 			}
-		}
+		}*/
 
 		public boolean add(String name, String surname, String personalID, String number, String user, String password) throws Exception{
 			
 			System.out.println("prueba");
 			Connection con = null;
-		
+			boolean retorno=false;
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO Users (dni,username,name,surname,phonenumber,password) VALUES(?,?,?,?,?,?)");
@@ -116,18 +116,19 @@ public class procs {
 				
 				int res = ps.executeUpdate();
 				if(res>0) {
-					return true;
+					retorno = true;
 				}
 				else {
-					return false; 	
+					retorno = false; 	
 				}
 				con.close();
+				return retorno;
 				
 			}catch(Exception e) {
 				System.err.println("Error al aniadir");
 			}
 		   
-			
+			return retorno;
 		}
 
 
