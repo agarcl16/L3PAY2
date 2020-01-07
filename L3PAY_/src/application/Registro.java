@@ -40,6 +40,7 @@ public class Registro {
 			this.numero++;
 			return true;
 		}*/
+		controlador = new procs();
 		solucion = controlador.add(name, surname, personalID, number, user, password);
 		return solucion;
 	}
