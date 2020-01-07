@@ -1,9 +1,13 @@
-package conexion;
+package application;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.DriverManager;
 public class Conexion_Bd {
+	
+	public Conexion_Bd() {
+		
+	}
 	
 	public static Connection getConnection() {
 		Connection cn = null;

@@ -83,7 +83,7 @@ public class MainController {
 			Mymessage.setText("Sign up Failed");
 		}
 		else {
-			if(registro.aniadirPersona(name, surname, personalID, number, user, password)){
+			if(registro.aniadirPersona(name.getText(), surname.getText(), personalID.getText(), number.getText(), user.getText(), password.getText())){
 				Mymessage.setText("Sign up Success");
 			}
 			else {

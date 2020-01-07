@@ -1,12 +1,37 @@
-package conexion;
+package application;
 
 
 
 import java.sql.CallableStatement;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class procs {
+	PreparedStatement ps;
+	ResultSet rs;
+		public procs() {
+			
+		}
+		
+		public static Connection getConnection() {
+			Connection cn = null;
+			
+			try {
+				
+				Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
+				cn= (Connection) DriverManager.getConnection("jdbc:sqlserver://LAPTOP-AQVCQBRF\\SQLEXPRESS:50663;databaseName=Users","inso","123");
+				
+			}catch (Exception e) {
+				
+				cn=null;
+			}
+			
+			return cn;
+		}
 	
 		public static void NuevoUsuario(String dni,String username,String name,String surname,String phonenumber,String email,String fechaNacimiento,String password)throws SQLException{
 		
@@ -73,17 +98,33 @@ public class procs {
 			}
 		}
 
-		public void add(user) throws Exception{
-			
-		    if(search(user.username)() == true) { 
+		public boolean add(String name, String surname, String personalID, String number, String user, String password) throws Exception{
+			Connection con = null;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("INSERT INTO Users (dni,username,name,surname,phonenumber,password) VALUES(?,?,?,?,?,?)");
 				
-				throw new Exception("ERROR: user already exists.");
-
-		    /*En caso de que se pueda anhadir correctamente*/
-			else {
-				user[next] = new user;
-				next = next + 1;
+				ps.setString(1,personalID);
+				ps.setString(2,user);
+				ps.setString(3,name);
+				ps.setString(4,surname);
+				ps.setString(5,number);
+				ps.setString(6,password);
+				
+				int res = ps.executeUpdate();
+				if(res>0) {
+					return true;
+				}
+				else {
+					return false; 	
+				}
+				con.close();
+				
+			}catch(Exception e) {
+				System.err.println("Error al aniadir");
 			}
+		   
+			
 		}
 
 
