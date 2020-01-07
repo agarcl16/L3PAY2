@@ -23,7 +23,10 @@ public class procs {
 			try {
 				
 				Class.forName("com.mysql.jdbc.Driver");
-				cn= (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/aplicacion;databaseName=users","root","1234");
+				String url="jdbc:mysql://localhost/aplicacion";
+				String usuario="root";
+				String contrasenia="1234";
+				cn= DriverManager.getConnection(url,usuario,contrasenia);
 				
 			}catch (Exception e) {
 				
