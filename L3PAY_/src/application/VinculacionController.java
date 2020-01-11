@@ -46,21 +46,8 @@ public class VinculacionController  {
 		}
 		else {
 			controlador = new procs();
-			if(this.recuento==0) {
-				if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-					String dni = controlador.getDni(MainController.elUsuario);
-					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
-						mensaje.setText("Cuenta aceptada.");
-						this.recuento++;
-					}
-				}
-				else {
-					mensaje.setText("Error en la vinculacion");
-				}
-			}
-			else {
 				if(controlador.searchAccount(controlador.getDni(MainController.elUsuario))) {
-					mensaje.setText("Error en la vinculacion");
+					mensaje.setText("Error en la vinculacion. Ya tiene una cuenta asociada");
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
@@ -74,7 +61,6 @@ public class VinculacionController  {
 						mensaje.setText("Error en la vinculacion");
 					}
 				}
-			}
 		}
 		limpiarCajas();
 	}
