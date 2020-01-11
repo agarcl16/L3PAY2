@@ -132,7 +132,6 @@ public class procs {
 			Connection con = null;
 			boolean retorno=false;
 			MainController hola = new MainController();
-			String dni = hola.getDni();
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO useracc (accountid, userdni) VALUES(?,?)");
