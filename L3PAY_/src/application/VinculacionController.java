@@ -45,9 +45,11 @@ public class VinculacionController  {
 			mensaje.setText("Error en la vinculacion");
 		}
 		else {
+			System.out.println("hola1");
 			controlador = new procs();
 			if(this.recuento==0) {
 				if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
+					System.out.println("hola2");
 					String dni = controlador.getDni(MainController.elUsuario);
 					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 						mensaje.setText("Cuenta aceptada.");
@@ -55,17 +57,21 @@ public class VinculacionController  {
 					}
 				}
 				else {
+					System.out.println("hola3");
 					mensaje.setText("Error en la vinculacion");
 				}
 			}
 			else {
 				if(controlador.searchAccount(Integer.parseInt(numCuenta.getText()))) {
+					System.out.println("hola4");
 					mensaje.setText("Error en la vinculacion");
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
+						System.out.println("hola5");
 						String dni = controlador.getDni(MainController.elUsuario);
 						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
+							System.out.println("hola6");
 							mensaje.setText("Cuenta aceptada.");
 							this.recuento++;
 						}
