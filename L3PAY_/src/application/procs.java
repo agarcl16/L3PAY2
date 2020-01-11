@@ -105,6 +105,34 @@ public class procs {
 			return respuesta;
 		}
 		
+		public boolean addAccount(int name, double dinero) {
+			Connection con = null;
+			boolean retorno=false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("INSERT INTO account (accountnumber, accountstatus) VALUES(?,?)");
+				ps.setInt(1, name);
+				ps.setDouble(2, dinero);
+				int res = ps.executeUpdate();
+				if(res>0) {
+					retorno = true;
+				}
+				else {
+					retorno = false; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al vincular");
+			}
+		   
+			return retorno;
+		}
+		public boolean searchAccount(int name) {
+			return true;
+		}
+		
 		/*public void remove(user){
 
 			int position = search(users.username);
