@@ -35,6 +35,8 @@ public class VinculacionController  {
 	
 	@FXML
 	public void vincular(ActionEvent event) {
+		MainController hola = new MainController();
+		System.out.println(hola.getUser());
 		if(numCuenta.equals("")||claveCuenta.equals("")) {
 			mensaje.setText("Error en la vinculacion");
 		}

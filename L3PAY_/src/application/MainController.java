@@ -35,11 +35,11 @@ public class MainController {
 	@FXML
 	private TextField surname;
 	@FXML
-	private TextField personalID;
+	public TextField personalID;
 	@FXML
 	private TextField number;
 	@FXML
-	private TextField user;
+	public TextField user;
 	@FXML
 	private PasswordField password;
 	@FXML
@@ -71,12 +71,8 @@ public class MainController {
 		}
 	}
 	
-	public String getDni() {
-		return this.personalID.getText();
-	}
-	
 	public String getUser() {
-		return this.usuario.getText();
+		return user.getText();
 	}
 	
 	public void registro(ActionEvent event) throws Exception{
