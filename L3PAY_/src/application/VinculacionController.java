@@ -36,12 +36,15 @@ public class VinculacionController  {
 	@FXML
 	public void vincular(ActionEvent event) {
 		if(numCuenta.equals("")||claveCuenta.equals("")) {
+			System.out.println("hola0");
 			mensaje.setText("Error en la vinculacion");
 		}
 		else if(numCuenta.getLength()!=10) {
+			System.out.println("hola8");
 			mensaje.setText("Error en la vinculacion");
 		}
 		else if(comprobacionNum(numCuenta.getText())) {
+			System.out.println("hola7");
 			mensaje.setText("Error en la vinculacion");
 		}
 		else {
