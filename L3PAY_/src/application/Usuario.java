@@ -15,11 +15,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 public class Usuario {
-	/*
 	
+	public String user;
 	public Usuario(String usuario) {
 		this.user = usuario;
-	}*/
+	}
 	
 	@FXML
 	public Button cancelar_vin;
