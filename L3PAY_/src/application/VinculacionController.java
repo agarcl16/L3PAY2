@@ -35,7 +35,6 @@ public class VinculacionController  {
 	
 	@FXML
 	public void vincular(ActionEvent event) {
-		String dni = controlador.getDni(MainController.elUsuario);
 		if(numCuenta.equals("")||claveCuenta.equals("")) {
 			mensaje.setText("Error en la vinculacion");
 		}
@@ -49,6 +48,7 @@ public class VinculacionController  {
 			controlador = new procs();
 			if(this.recuento==0) {
 				if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
+					String dni = controlador.getDni(MainController.elUsuario);
 					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 						mensaje.setText("Cuenta aceptada.");
 						this.recuento++;
@@ -59,6 +59,7 @@ public class VinculacionController  {
 				}
 			}
 			else {
+				String dni = controlador.getDni(MainController.elUsuario);
 				if(controlador.searchAccount(dni)) {
 					mensaje.setText("Error en la vinculacion");
 				}
