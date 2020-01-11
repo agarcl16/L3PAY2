@@ -15,6 +15,12 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 public class Usuario {
+	/*
+	
+	public Usuario(String usuario) {
+		this.user = usuario;
+	}*/
+	
 	@FXML
 	public Button cancelar_vin;
 	@FXML
@@ -25,10 +31,6 @@ public class Usuario {
 	@FXML
 	private Label mensaje;
 	public int recuento = 0;
-	private String user;
-	public Usuario(String usuario) {
-		this.user = usuario;
-	}
 	@FXML
 	public void cancel(ActionEvent event) {
 		Stage stage = (Stage) cancelar_vin.getScene().getWindow();
@@ -50,11 +52,10 @@ public class Usuario {
 			controlador = new procs();
 			if(this.recuento==0) {
 				if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-					String dni = controlador.getDni(user);
-					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
+				/*	if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()))){
 						mensaje.setText("Cuenta aceptada.");
 						this.recuento++;
-					}
+					}*/
 				}
 				else {
 					mensaje.setText("Error en la vinculacion");
@@ -66,11 +67,10 @@ public class Usuario {
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-						String dni = controlador.getDni(user);
-						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
+						/*if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()))){
 							mensaje.setText("Cuenta aceptada.");
 							this.recuento++;
-						}
+						}*/
 					}
 					else {
 						mensaje.setText("Error en la vinculacion");
