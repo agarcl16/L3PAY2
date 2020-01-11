@@ -71,6 +71,10 @@ public class MainController {
 		}
 	}
 	
+	public String getDni() {
+		return this.personalID.getText();
+	}
+	
 	public String getUser() {
 		return this.usuario.getText();
 	}

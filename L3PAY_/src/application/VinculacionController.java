@@ -61,8 +61,10 @@ public class VinculacionController  {
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-						mensaje.setText("Cuenta aceptada.");
-						this.recuento++;
+						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()))){
+							mensaje.setText("Cuenta aceptada.");
+							this.recuento++;
+						}
 					}
 					else {
 						mensaje.setText("Error en la vinculacion");

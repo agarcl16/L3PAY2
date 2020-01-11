@@ -126,14 +126,18 @@ public class procs {
 			}catch(Exception e) {
 				System.err.println("Error al vincular");
 			}
+			return retorno;
+		}
+		public boolean addAccount2(int name) {
+			Connection con = null;
+			boolean retorno=false;
+			MainController hola = new MainController();
+			String dni = hola.getDni();
 			try {
-				MainController hola = new MainController();
-				String user = hola.getUser();
-				String dni = this.getDni(user);
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO useracc (accountid, userdni) VALUES(?,?)");
 				ps.setInt(1, name);
-				ps.setString(2, dni);
+				ps.setString(1, dni);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
@@ -147,34 +151,12 @@ public class procs {
 			}catch(Exception e) {
 				System.err.println("Error al vincular");
 			}
-		   
 			return retorno;
 		}
 		public boolean searchAccount(int name) {
 			return false;
 		}
-		public String getDni(String user) {
-			Connection con = null;
-			String retorno = null;
-			try {
-				con = getConnection();
-				ps = con.prepareStatement("SELECT dni FROM users WHERE username = ?");
-				ps.setString(1, user);
-				rs = ps.executeQuery();
-				if(rs.next()) {
-					retorno = rs.getString("dni");
-				}
-				else {
-					retorno = null;
-				}
-				con.close();
-				return retorno;
-				
-			}catch(Exception e) {
-				System.err.println("Error al vincular");
-			}
-			return retorno;
-		}
+		
 		
 		/*public void remove(user){
 
