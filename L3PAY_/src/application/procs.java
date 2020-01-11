@@ -124,7 +124,7 @@ public class procs {
 				return retorno;
 				
 			}catch(Exception e) {
-				System.err.println("Error al vincular");
+				System.err.println("Error al vincular. aqui1");
 			}
 			return retorno;
 		}
@@ -171,7 +171,7 @@ public class procs {
 				return retorno;
 				
 			}catch(Exception e) {
-				System.err.println("Error al vincular");
+				System.err.println("Error al vincular. aqui2");
 			}
 			return retorno;
 		}
