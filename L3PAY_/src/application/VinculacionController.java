@@ -51,8 +51,6 @@ public class VinculacionController  {
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-						String dni = controlador.getDni(MainController.elUsuario);
-						System.out.println(MainController.elUsuario+" "+dni);
 						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 							mensaje.setText("Cuenta aceptada.");
 							this.recuento++;
