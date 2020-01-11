@@ -59,12 +59,12 @@ public class VinculacionController  {
 				}
 			}
 			else {
-				String dni = controlador.getDni(MainController.elUsuario);
-				if(controlador.searchAccount(dni)) {
+				if(controlador.searchAccount(controlador.getDni(MainController.elUsuario))) {
 					mensaje.setText("Error en la vinculacion");
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
+						String dni = controlador.getDni(MainController.elUsuario);
 						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 							mensaje.setText("Cuenta aceptada.");
 							this.recuento++;
