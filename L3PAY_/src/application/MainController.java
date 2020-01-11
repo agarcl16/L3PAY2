@@ -29,7 +29,7 @@ public class MainController {
 	private TextField contrasenia;
 	@FXML
 	private Button cancelar_reg;
-	
+	public static String elUsuario;
 	@FXML
 	private TextField name;
 	@FXML
@@ -60,6 +60,7 @@ public class MainController {
 		comprobacion = inicio.accesoUsuario(usuario.getText(), contrasenia.getText());
 		if(comprobacion) {
 			myMessage2.setText("Sign in Success");
+				this.elUsuario = usuario.getText();
 				//Usuario usuariol = new Usuario(usuario.getText());
 				Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/L3PAY.fxml"));
 				Scene scene = new Scene(root,600,600);
