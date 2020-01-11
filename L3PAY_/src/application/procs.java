@@ -131,12 +131,11 @@ public class procs {
 		public boolean addAccount2(int name) {
 			Connection con = null;
 			boolean retorno=false;
-			MainController hola = new MainController();
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO useracc (accountid, userdni) VALUES(?,?)");
 				ps.setInt(1, name);
-				ps.setString(2, "71460147K");
+				ps.setString(2, "39469120Q");
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
