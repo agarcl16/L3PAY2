@@ -135,7 +135,7 @@ public class procs {
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
-				ps.setString(2, user);
+				ps.setString(1, user);
 				rs = ps.executeQuery();
 				if(rs.next()) {
 					retorno = rs.getString("dni");
