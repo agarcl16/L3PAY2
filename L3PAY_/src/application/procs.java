@@ -137,7 +137,7 @@ public class procs {
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO useracc (accountid, userdni) VALUES(?,?)");
 				ps.setInt(1, name);
-				ps.setString(1, dni);
+				ps.setString(2, dni);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
