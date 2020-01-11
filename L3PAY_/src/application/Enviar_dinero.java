@@ -74,7 +74,7 @@ public class Enviar_dinero {
 			}
 			else {
 				mensaje1.setText("Su solicitud ha sido guardada y enviada");
-				envio.enviarDinero(controlador.getUser(), name1.getText());
+				//envio.enviarDinero(controlador.getUser(), name1.getText());
 				this.contador++;
 			}
 		}
@@ -94,7 +94,7 @@ public class Enviar_dinero {
 			}
 			else {
 				mensaje2.setText("Su solicitud ha sido guardada y enviada");
-				envio.enviarDinero(controlador.getUser(), name2.getText());
+				//envio.enviarDinero(controlador.getUser(), name2.getText());
 				this.contador++;
 			}
 		}

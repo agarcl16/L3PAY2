@@ -36,9 +36,9 @@ public class Ingresar {
 	@FXML
 	public void ingresar(ActionEvent event) {
 		//comprobar contraseña
-		if(nuevoIngreso.Ingresar(controlador.getUser(),cost.getText() )){
+		/*if(nuevoIngreso.Ingresar(controlador.getUser(),cost.getText() )){
 			mensaje.setText("El ingreso ha sido un exito");
-		}
+		}*/
 	}
 	
 }

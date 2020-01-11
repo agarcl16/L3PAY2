@@ -1,5 +1,4 @@
 package application;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -15,8 +14,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-public class VinculacionController  {
+public class Usuario {
 	@FXML
 	public Button cancelar_vin;
 	@FXML
@@ -27,6 +25,10 @@ public class VinculacionController  {
 	@FXML
 	private Label mensaje;
 	public int recuento = 0;
+	private String user;
+	public Usuario(String usuario) {
+		this.user = usuario;
+	}
 	@FXML
 	public void cancel(ActionEvent event) {
 		Stage stage = (Stage) cancelar_vin.getScene().getWindow();
