@@ -129,11 +129,11 @@ public class procs {
 			return retorno;
 		}
 		
-		public String getDni(String user) {
+	/*	public String getDni(String user) {
 			String retorno;
 			retorn = this.
 			return null;
-		}
+		}*/
 		
 		public boolean addAccount2(int name) {
 			Connection con = null;
