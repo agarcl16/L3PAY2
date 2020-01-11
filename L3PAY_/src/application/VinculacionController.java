@@ -33,7 +33,7 @@ public class VinculacionController  {
 		stage.close();
 	}
 	
-	@FXML
+/*	@FXML
 	public void vincular(ActionEvent event) {
 		if(numCuenta.equals("")||claveCuenta.equals("")) {
 			mensaje.setText("Error en la vinculacion");
@@ -95,6 +95,6 @@ public class VinculacionController  {
 		}catch(NumberFormatException e) {
 			return true;
 		}
-	}
+	}*/
 	
 }

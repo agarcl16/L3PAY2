@@ -50,7 +50,8 @@ public class Usuario {
 			controlador = new procs();
 			if(this.recuento==0) {
 				if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()))){
+					String dni = controlador.getDni(user);
+					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 						mensaje.setText("Cuenta aceptada.");
 						this.recuento++;
 					}
@@ -65,7 +66,8 @@ public class Usuario {
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()))){
+						String dni = controlador.getDni(user);
+						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 							mensaje.setText("Cuenta aceptada.");
 							this.recuento++;
 						}

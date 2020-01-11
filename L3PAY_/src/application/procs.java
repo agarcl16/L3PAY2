@@ -129,20 +129,37 @@ public class procs {
 			return retorno;
 		}
 		
-	/*	public String getDni(String user) {
-			String retorno;
-			retorn = this.
-			return null;
-		}*/
+		public String getDni(String user) {
+			Connection con = null;
+			String retorno=null;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM users WHERE username = ?");
+				ps.setString(2, user);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					retorno = rs.getString("dni");
+				}
+				else {
+					retorno = null; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al coger el dni");
+			}
+			return retorno;
+		}
 		
-		public boolean addAccount2(int name) {
+		public boolean addAccount2(int name, String dni) {
 			Connection con = null;
 			boolean retorno=false;
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("INSERT INTO useracc (accountid, userdni) VALUES(?,?)");
 				ps.setInt(1, name);
-				ps.setString(2, "39469120Q");
+				ps.setString(2, dni);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
