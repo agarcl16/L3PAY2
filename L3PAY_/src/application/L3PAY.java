@@ -22,12 +22,15 @@ public class L3PAY {
 	
 	@FXML
 	public Button cancelar_l3pay;
+	@FXML
+	private Label userName;
 	
 	public L3PAY() {
 		
 	}
 	
 	public void vincular() throws Exception {
+		userName.setText(MainController.elUsuario);
 		Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/vincular_cuenta.fxml"));
 		Scene scene = new Scene(root,400,400);
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
