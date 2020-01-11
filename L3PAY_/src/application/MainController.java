@@ -60,7 +60,7 @@ public class MainController {
 		comprobacion = inicio.accesoUsuario(usuario.getText(), contrasenia.getText());
 		if(comprobacion) {
 			myMessage2.setText("Sign in Success");
-				Usuario usuariol = new Usuario(usuario.getText());
+				//Usuario usuariol = new Usuario(usuario.getText());
 				Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/L3PAY.fxml"));
 				Scene scene = new Scene(root,600,600);
 				scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
