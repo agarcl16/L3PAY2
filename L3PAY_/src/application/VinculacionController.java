@@ -35,25 +35,19 @@ public class VinculacionController  {
 	
 	@FXML
 	public void vincular(ActionEvent event) {
-		System.out.println(Integer.parseInt(numCuenta.getText()));
 		if(numCuenta.equals("")||claveCuenta.equals("")) {
-			System.out.println("hola0");
 			mensaje.setText("Error en la vinculacion");
 		}
-		else if(numCuenta.getLength()!=10) {
-			System.out.println("hola8");
+		else if(numCuenta.getLength()!=9) {
 			mensaje.setText("Error en la vinculacion");
 		}
 		else if(comprobacionNum(numCuenta.getText())) {
-			System.out.println("hola7");
 			mensaje.setText("Error en la vinculacion");
 		}
 		else {
-			System.out.println("hola1");
 			controlador = new procs();
 			if(this.recuento==0) {
 				if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-					System.out.println("hola2");
 					String dni = controlador.getDni(MainController.elUsuario);
 					if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
 						mensaje.setText("Cuenta aceptada.");
@@ -61,21 +55,17 @@ public class VinculacionController  {
 					}
 				}
 				else {
-					System.out.println("hola3");
 					mensaje.setText("Error en la vinculacion");
 				}
 			}
 			else {
 				if(controlador.searchAccount(Integer.parseInt(numCuenta.getText()))) {
-					System.out.println("hola4");
 					mensaje.setText("Error en la vinculacion");
 				}
 				else {
 					if(controlador.addAccount(Integer.parseInt(numCuenta.getText()),this.generarDinero())==true) {
-						System.out.println("hola5");
 						String dni = controlador.getDni(MainController.elUsuario);
 						if(controlador.addAccount2(Integer.parseInt(numCuenta.getText()),dni)){
-							System.out.println("hola6");
 							mensaje.setText("Cuenta aceptada.");
 							this.recuento++;
 						}
