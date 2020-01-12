@@ -269,7 +269,7 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("INSERT INTO useracc userdni VALUES ? WHERE accountnumber ?");
+				ps = con.prepareStatement("INSERT INTO account userdni VALUES ? WHERE accountnumber ?");
 				ps.setDouble(1, cantidad);
 				ps.setInt(2, cuenta);
 				int res = ps.executeUpdate();
