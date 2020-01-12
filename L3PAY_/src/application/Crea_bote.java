@@ -43,7 +43,10 @@ public class Crea_bote {
 		}
 		//if(nombre bote ya existe
 		if(bote.aniadePersona(nameUser.getText(), namePot.getText())) {
-			
+			mensaje.setText("Creado correcto");
+		}
+		else {
+			mensaje.setText("error al crear el bote");
 		}
 		
 	}
