@@ -16,7 +16,7 @@ public class Respaldos{
 	
 		try {
 		
-			Process p = Runtime.getRuntime().exec("C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump -u root -p 1234 -B aplicacion");
+			Process p = Runtime.getRuntime().exec("mysqldump -u root -p1234 aplicacion");
 			
 			new HiloLector(p.getErrorStream()).start();
 			
