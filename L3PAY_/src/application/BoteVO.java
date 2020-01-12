@@ -6,24 +6,23 @@ public class BoteVO {
 		controlador = new procs();
 	}
 	public boolean creaBote(String namePot, int potCode) {
-		System.out.println("hola2.1");
 		if(controlador.creaBote(namePot, MainController.elUsuario, potCode)) {
 			return true;
 		}
 		return false;
 	}
-	public boolean aniadePersona(String usuario, String bote) {
-		System.out.println("hola3.1");
-		int pot = controlador.searchPot(bote);
-		if(pot==-1) {
+	public boolean aniadePersona(String usuario, String bote, int codigo) {
+		String pot = controlador.searchPot(codigo);
+		if(!pot.equals(bote)) {
 			return false;
 		}
 		else {
-			System.out.println("hola3.2");
 			if(controlador.search(usuario)) {
-				System.out.println("hola3.3");
+				if(controlador.searchUserPot(usuario)!=-1) {
+					return false;
+				}
 				String dni = controlador.getDni(usuario);
-				if(controlador.aniadirPersonaBote(usuario, pot, dni)) {
+				if(controlador.aniadirPersonaBote(usuario, codigo, dni)) {
 					return true;
 				}
 				return false;
@@ -33,7 +32,16 @@ public class BoteVO {
 			}
 		}
 	}
-	public boolean searchBote(String namePot) {
+	public boolean searchBote(int potID, String namePot) {
+		String pot = controlador.searchPot(potID);
+		if(pot.equals(namePot)) {
+			return true;
+		}
 		return false;
+	}
+	public String getLeader(int potID) {
+		String respuesta = null;
+		respuesta = controlador.getLeader(potID);
+		return respuesta;
 	}
 }

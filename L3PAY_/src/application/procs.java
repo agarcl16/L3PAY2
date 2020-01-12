@@ -114,19 +114,61 @@ public class procs {
 			return retorno;
 		}
 		
-		public int searchPot(String namePot) {
+		public int searchUserPot(String user) {
 			Connection con = null;
-			int respuesta = 0;
+			int respuesta = -1;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("SELECT * FROM pot WHERE potname = ?");
-				ps.setString(1, namePot);
+				ps = con.prepareStatement("SELECT * FROM participant WHERE participantname = ?");
+				ps.setString(1, user);
 				rs = ps.executeQuery();
 				if(rs.next()) {
-					respuesta = rs.getInt("potID");
+					respuesta = rs.getInt("potcall");
 				}
 				else {
 					respuesta = -1;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar la cuenta");
+			}	
+			return respuesta;
+		}
+		
+		public String getLeader(int code) {
+			Connection con = null;
+			String respuesta = null;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM pot WHERE potID = ?");
+				ps.setInt(1, code);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getString("potLeader");
+				}
+				else {
+					respuesta = null;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar la cuenta");
+			}	
+			return respuesta;
+		}
+		
+		public String searchPot(int codigo) {
+			Connection con = null;
+			String respuesta = null;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM pot WHERE potID = ?");
+				ps.setInt(1, codigo);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getString("potname");
+				}
+				else {
+					respuesta = null;
 				}
 				con.close();
 			}catch(Exception e) {

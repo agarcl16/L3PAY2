@@ -16,17 +16,22 @@ public class BoteDAO {
 			return false;
 		}
 		codigo = Integer.parseInt(potCode);
-		if(controlador.searchBote(namePot)) {
+		if(controlador.searchBote(codigo, namePot)) {
+			if(controlador.getLeader(codigo).equals(MainController.elUsuario)) {
+				if(controlador.aniadePersona(user, namePot, codigo)) {
+					return true;
+				}
+			}
+			else {
+				return false;
+			}
 			//aniadimos directamente la persona
 		}
 		else {
 			//creamos el bote y aniadimos lider y la persona
 			if(controlador.creaBote(namePot, codigo)) {
-				System.out.println("hola3");
-				if(controlador.aniadePersona(MainController.elUsuario, namePot)) {
-					System.out.println("hola4");
-					if(controlador.aniadePersona(user, namePot)) {
-						System.out.println("hola5");
+				if(controlador.aniadePersona(MainController.elUsuario, namePot, codigo)) {
+					if(controlador.aniadePersona(user, namePot, codigo)) {
 						return true;
 					}
 				}
