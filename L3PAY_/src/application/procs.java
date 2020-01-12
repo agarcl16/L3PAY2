@@ -269,9 +269,9 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("INSERT INTO account userdni VALUES ? WHERE accountnumber ?");
-				ps.setDouble(1, cantidad);
+				ps = con.prepareStatement("UPDATE account WHERE accountnumber = ? SET accountstatus = ?");
 				ps.setInt(2, cuenta);
+				ps.setDouble(1, cantidad);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
