@@ -85,12 +85,13 @@ public class Enviar_dinero {
 	public void enviarDinero2(ActionEvent event) {
 		envio = new EnviosDAO();
 		controlador2 = new procs();
-		if((password2.getText().equals("")||name2.getText().equals("")||(cost2.getText().equals("")&&phone2.getText().contentEquals("")))){
+		if((password2.getText().equals("")||cost2.getText().equals("")||(name2.getText().equals("")&&phone2.getText().contentEquals("")))){
 			
 			mensaje2.setText("error");
 		}
 		else {
 			//comprobamos con un if si existe el usuario
+			//comprobar cual está rellenadoa
 			boolean comprobacion = controlador2.search(name2.getText());
 			if(comprobacion){
 				mensaje2.setText("error");
