@@ -93,9 +93,9 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("INSERT INTO pot (potname,potstatus,potleader,potID) VALUES(?,?,?)");
+				ps = con.prepareStatement("INSERT INTO pot (potname,potstatus,potleader,potID) VALUES(?,?,?,?)");
 				ps.setString(1, namePot);
-				ps.setDouble(2, 0.0);
+				ps.setDouble(2, 0);
 				ps.setString(3, userLeader);
 				ps.setInt(4, potCode);
 				int res = ps.executeUpdate();
