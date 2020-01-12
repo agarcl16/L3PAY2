@@ -50,6 +50,8 @@ public class MainController {
 	}
 	@FXML
 	public void cancel(ActionEvent event) {
+		Respaldos copia = new Respaldos();
+		copia.copia();
 		Stage stage = (Stage) cancelar_reg.getScene().getWindow();
 		stage.close();
 	}

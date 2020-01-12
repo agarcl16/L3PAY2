@@ -1,17 +1,21 @@
-package copia_seguridad;
+package application;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.logging.Logger;
 
-
+import copia_seguridad.HiloLector;
 
 import java.util.logging.Level;
 
 
 public class Respaldos{
 
-	public static void main(String args[]) {
+	public Respaldos() {
+		
+	}
+	
+	public void copia() {
 	
 		try {
 		
