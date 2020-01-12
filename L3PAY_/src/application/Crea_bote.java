@@ -42,11 +42,12 @@ public class Crea_bote {
 			mensaje.setText("Error. Rellene todos los campos");
 		}
 		//if(nombre bote ya existe
+		//if(bote.aniadePersona())
 		
 	}
 	
 	@FXML
-	public void crearBote(ActionEvent event) {
+	public void meterDinero(ActionEvent event) {
 		
 	}
 	

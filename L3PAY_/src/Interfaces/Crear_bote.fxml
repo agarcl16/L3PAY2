@@ -18,7 +18,7 @@
             <Label layoutX="40.0" layoutY="206.0" text="Seleccionar cantidad inicial" />
             <TextField fx:id="costPot" layoutX="261.0" layoutY="202.0" prefHeight="25.0" prefWidth="86.0" />
             <Label layoutX="347.0" layoutY="206.0" text="\$" />
-            <Button layoutX="172.0" layoutY="273.0" mnemonicParsing="false" onAction="#crearBote" text="Aceptar" />
+            <Button layoutX="172.0" layoutY="273.0" mnemonicParsing="false" onAction="#meterDinero" text="Aceptar" />
             <Button fx:id="cancelar_pot" layoutX="169.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
             <Label fx:id="mensaje" layoutX="186.0" layoutY="241.0" />
          </children>
