@@ -16,12 +16,12 @@ public class Respaldos{
 	
 		try {
 		
-			Process p = Runtime.getRuntime().exec("mysqldump -u root -p 1234 aplicacion");
+			Process p = Runtime.getRuntime().exec("C:\\Program Files\\MySQL\\MySQL Server 8.0\\bin\\mysqldump -u root -p 1234 -B aplicacion");
 			
 			new HiloLector(p.getErrorStream()).start();
 			
 			InputStream is = p.getInputStream();
-			FileOutputStream fos = new FileOutputStream("backup_aplicacion.sql");
+			FileOutputStream fos = new FileOutputStream("C:\\RespaldoMySQL/backup_aplicacion.sql");
 			
 			byte[] buffer =new byte[1000];
 					
