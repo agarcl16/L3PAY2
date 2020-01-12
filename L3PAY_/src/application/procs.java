@@ -93,10 +93,10 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("INSERT INTO pot (potname, potleader, potstatus) VALUES(?,?,?)");
+				ps = con.prepareStatement("INSERT INTO pot (potname,potstatus,potleader) VALUES(?,?,?)");
 				ps.setString(1, namePot);
-				ps.setString(2, userLeader);
-				ps.setDouble(3, 0.0);
+				ps.setDouble(2, 0.0);
+				ps.setString(3, userLeader);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
@@ -108,7 +108,7 @@ public class procs {
 				return retorno;
 				
 			}catch(Exception e) {
-				System.err.println("Error al crear el bote");
+				System.err.println("Error al crear bote");
 			}
 			return retorno;
 		}
