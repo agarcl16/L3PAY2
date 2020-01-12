@@ -222,6 +222,72 @@ public class procs {
 			}
 		}*/
 
+		public int cuenta(String dni) {
+			Connection con = null;
+			int respuesta = 0;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM useracc WHERE userdni = ?");
+				ps.setString(1, dni);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getInt("accountid");
+				}
+				else {
+					respuesta = 0;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar la cuenta");
+			}	
+			return respuesta;
+		}
+		
+		public double dineroCuente(int cuenta) {
+			Connection con = null;
+			double respuesta = 0;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM account WHERE accountnumber = ?");
+				ps.setInt(1, cuenta);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getDouble("accountstatus");
+				}
+				else {
+					respuesta = 0;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al sacar dinero de la cuenta");
+			}	
+			return respuesta;
+		}
+		
+		public boolean enviarDinero(int cuenta, double cantidad) {
+			Connection con = null;
+			boolean retorno=false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("INSERT INTO useracc userdni VALUES ? WHERE accountnumber ?");
+				ps.setDouble(1, cantidad);
+				ps.setInt(2, cuenta);
+				int res = ps.executeUpdate();
+				if(res>0) {
+					retorno = true;
+				}
+				else {
+					retorno = false; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al enviar");
+			}
+			return retorno;
+		}
+		
 		public boolean add(String name, String surname, String personalID, String number, String user, String password) throws Exception{
 			
 			Connection con = null;

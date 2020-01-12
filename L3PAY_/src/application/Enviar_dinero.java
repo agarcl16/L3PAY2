@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 public class Enviar_dinero {
 	public procs controlador2;
 	private int contador=0;
-	private Envios envio;
+	private EnviosDAO envio;
 	
 	private MainController controlador;
 	@FXML
@@ -62,6 +62,7 @@ public class Enviar_dinero {
 	
 	@FXML
 	public void enviarDinero1(ActionEvent event) {
+		envio = new EnviosDAO();
 		controlador2 = new procs();
 		if(name1.getText().equals("")||cost1.getText().equals("")||password1.getText().equals("")){
 			mensaje1.setText("error");
@@ -73,14 +74,16 @@ public class Enviar_dinero {
 				mensaje1.setText("error");
 			}
 			else {
-				mensaje1.setText("Su solicitud ha sido guardada y enviada");
-				//envio.enviarDinero(controlador.getUser(), name1.getText());
-				this.contador++;
+				if(envio.enviarDinero(MainController.elUsuario, name1.getText(), cost1.getText())) {
+					mensaje1.setText("Su solicitud ha sido guardada y enviada");
+					this.contador++;
+				}
 			}
 		}
 	}
 	@FXML
 	public void enviarDinero2(ActionEvent event) {
+		envio = new EnviosDAO();
 		controlador2 = new procs();
 		if((password2.getText().equals("")||name2.getText().equals("")||(cost2.getText().equals("")&&phone2.getText().contentEquals("")))){
 			
