@@ -42,7 +42,9 @@ public class Crea_bote {
 			mensaje.setText("Error. Rellene todos los campos");
 		}
 		//if(nombre bote ya existe
-		//if(bote.aniadePersona())
+		if(bote.aniadePersona(nameUser.getText(), namePot.getText())) {
+			
+		}
 		
 	}
 	

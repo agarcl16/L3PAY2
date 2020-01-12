@@ -22,7 +22,7 @@ public class EnviosDAO {
 			//Ahora sacamos los numero de cuenta de ambos usuarios
 			cuentaEnvia = envia.getCuenta(this.sendUser);
 			cuentaRecibe = envia.getCuenta(this.receiveUser);
-			if(cuentaEnvia == 0 || cuentaRecibe == 0) {
+			if(cuentaEnvia == -1 || cuentaRecibe == -1) {
 				return false;
 			}
 			

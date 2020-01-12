@@ -88,6 +88,78 @@ public class procs {
 			return retorno;
 		}
 		
+		public boolean creaBote(String namePot, String userLeader) {
+			Connection con = null;
+			boolean retorno=false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("INSERT INTO pot (potname, potleader, missingmoney) VALUES(?,?,?)");
+				ps.setString(1, namePot);
+				ps.setString(2, userLeader);
+				ps.setDouble(3, 0.0);
+				int res = ps.executeUpdate();
+				if(res>0) {
+					retorno = true;
+				}
+				else {
+					retorno = false; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al crear el bote");
+			}
+			return retorno;
+		}
+		
+		public int searchPot(String namePot) {
+			Connection con = null;
+			int respuesta = 0;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM pot WHERE potname = ?");
+				ps.setString(1, namePot);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getInt("potID");
+				}
+				else {
+					respuesta = -1;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar la cuenta");
+			}	
+			return respuesta;
+		}
+		
+		public boolean aniadirPersonaBote(String userName, int potID, String dni) {
+			Connection con = null;
+			boolean retorno=false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("INSERT INTO participant (potcall, usercall, contribution, participantname) VALUES(?,?,?,?)");
+				ps.setInt(1, potID);
+				ps.setString(2, dni);
+				ps.setDouble(3, 0.0);
+				ps.setString(4, userName);
+				int res = ps.executeUpdate();
+				if(res>0) {
+					retorno = true;
+				}
+				else {
+					retorno = false; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al aniadir persona al bote");
+			}
+			return retorno;
+		}
+		
 		public String searchPassword(String userName){
 			Connection con = null;
 			String respuesta = null;
@@ -259,7 +331,7 @@ public class procs {
 					respuesta = rs.getInt("accountid");
 				}
 				else {
-					respuesta = 0;
+					respuesta = -1;
 				}
 				con.close();
 			}catch(Exception e) {
