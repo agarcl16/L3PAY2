@@ -1,4 +1,4 @@
-package copia_seguridad;
+package application;
 import java.io.InputStream;
 
 public class HiloLector extends Thread{

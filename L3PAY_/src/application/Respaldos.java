@@ -3,9 +3,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.logging.Logger;
-
-import copia_seguridad.HiloLector;
-
 import java.util.logging.Level;
 
 
@@ -19,12 +16,12 @@ public class Respaldos{
 	
 		try {
 		
-			Process p = Runtime.getRuntime().exec("mysqldump -u root -p1234 aplicacion");
+			Process p = Runtime.getRuntime().exec("mysqldump -u root -p 1234 aplicacion");
 			
 			new HiloLector(p.getErrorStream()).start();
 			
 			InputStream is = p.getInputStream();
-			FileOutputStream fos = new FileOutputStream("C:\\RespaldoMySQL\backup_aplicacion.sql");
+			FileOutputStream fos = new FileOutputStream("backup_aplicacion.sql");
 			
 			byte[] buffer =new byte[1000];
 					
