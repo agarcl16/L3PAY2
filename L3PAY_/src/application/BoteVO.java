@@ -5,9 +5,9 @@ public class BoteVO {
 	public BoteVO() {
 		controlador = new procs();
 	}
-	public boolean creaBote(String namePot) {
+	public boolean creaBote(String namePot, int potCode) {
 		System.out.println("hola2.1");
-		if(controlador.creaBote(namePot, MainController.elUsuario)) {
+		if(controlador.creaBote(namePot, MainController.elUsuario, potCode)) {
 			return true;
 		}
 		return false;

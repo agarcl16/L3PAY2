@@ -26,6 +26,8 @@ public class Crea_bote {
 	@FXML
 	public TextField costPot;
 	@FXML
+	public TextField potCode;
+	@FXML
 	private Label mensaje;
 	public BoteDAO bote;
 	
@@ -38,11 +40,11 @@ public class Crea_bote {
 	@FXML 
 	public void aniadirPersona(ActionEvent event) {
 		bote = new BoteDAO();
-		if(namePot.getText().equals("")||nameUser.getText().equals("")) {
+		if(namePot.getText().equals("")||nameUser.getText().equals("")||potCode.getText().equals("")) {
 			mensaje.setText("Error. Rellene todos los campos");
 		}
 		//if(nombre bote ya existe
-		if(bote.aniadePersona(nameUser.getText(), namePot.getText())) {
+		if(bote.aniadePersona(nameUser.getText(), namePot.getText(), potCode.getText())) {
 			mensaje.setText("Creado correcto");
 		}
 		else {
