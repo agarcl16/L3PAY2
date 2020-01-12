@@ -88,7 +88,7 @@ public class procs {
 			return retorno;
 		}
 		
-		public boolean creaBote(String namePot, String userLeader) {
+		public boolean creaBote(String namePot, String userLeader, int potCode) {
 			Connection con = null;
 			boolean retorno=false;
 			try {
@@ -97,7 +97,7 @@ public class procs {
 				ps.setString(1, namePot);
 				ps.setDouble(2, 0.0);
 				ps.setString(3, userLeader);
-				ps.setInt(4, 001);
+				ps.setInt(4, potCode);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
