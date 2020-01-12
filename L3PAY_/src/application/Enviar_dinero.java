@@ -70,7 +70,7 @@ public class Enviar_dinero {
 		else {
 			//comprobamos con un if si existe el usuario
 			boolean comprobacion = controlador2.search(name1.getText());
-			if(comprobacion){
+			if(!comprobacion){
 				mensaje1.setText("error");
 			}
 			else {
@@ -93,7 +93,7 @@ public class Enviar_dinero {
 			//comprobamos con un if si existe el usuario
 			//comprobar cual está rellenadoa
 			boolean comprobacion = controlador2.search(name2.getText());
-			if(comprobacion){
+			if(!comprobacion){
 				mensaje2.setText("error");
 			}
 			else {
