@@ -269,9 +269,9 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("UPDATE account WHERE accountnumber = ? SET accountstatus = ?");
-				ps.setInt(2, cuenta);
+				ps = con.prepareStatement("UPDATE account SET accountstatus = ? WHERE accountnumber = ?");
 				ps.setDouble(1, cantidad);
+				ps.setInt(2, cuenta);
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;
