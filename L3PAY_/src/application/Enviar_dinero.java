@@ -64,19 +64,28 @@ public class Enviar_dinero {
 	public void enviarDinero1(ActionEvent event) {
 		envio = new EnviosDAO();
 		controlador2 = new procs();
+		String truePassword = controlador2.searchPassword(MainController.elUsuario);
 		if(name1.getText().equals("")||cost1.getText().equals("")||password1.getText().equals("")){
 			mensaje1.setText("error");
 		}
+		else if(truePassword!=password1.getText()) {
+			mensaje1.setText("contrasena invalida");
+		}
 		else {
+
 			//comprobamos con un if si existe el usuario
 			boolean comprobacion = controlador2.search(name1.getText());
 			if(!comprobacion){
-				mensaje1.setText("error");
+				mensaje1.setText("error. No existe ese ususario");
 			}
+			
 			else {
 				if(envio.enviarDinero(MainController.elUsuario, name1.getText(), cost1.getText())) {
 					mensaje1.setText("Su solicitud ha sido guardada y enviada");
 					this.contador++;
+				}
+				else {
+					mensaje1.setText("Error en el envio");
 				}
 			}
 		}
@@ -85,21 +94,33 @@ public class Enviar_dinero {
 	public void enviarDinero2(ActionEvent event) {
 		envio = new EnviosDAO();
 		controlador2 = new procs();
+		String truePassword = controlador2.searchPassword(MainController.elUsuario);
 		if((password2.getText().equals("")||cost2.getText().equals("")||(name2.getText().equals("")&&phone2.getText().contentEquals("")))){
 			
-			mensaje2.setText("error");
+			mensaje2.setText("error. No existe el ususario");
+		}
+		else if(truePassword!=password2.getText()) {
+
+			mensaje2.setText("error. Contrasena invalida");
 		}
 		else {
 			//comprobamos con un if si existe el usuario
 			//comprobar cual está rellenadoa
-			boolean comprobacion = controlador2.search(name2.getText());
-			if(!comprobacion){
-				mensaje2.setText("error");
-			}
-			else {
-				mensaje2.setText("Su solicitud ha sido guardada y enviada");
-				//envio.enviarDinero(controlador.getUser(), name2.getText());
-				this.contador++;
+			if(!name2.getText().equals("")){
+				boolean comprobacion = controlador2.search(name2.getText());
+				if(!comprobacion){
+					mensaje2.setText("error. No existe el ususario");
+				}
+				else {
+					if(envio.enviarDinero(MainController.elUsuario, name2.getText(), cost2.getText())) {
+						mensaje2.setText("Su solicitud ha sido guardada y enviada");
+					//envio.enviarDinero(controlador.getUser(), name2.getText());
+						this.contador++;
+					}
+					else {
+						mensaje2.setText("Error en el envio");
+					}
+				}
 			}
 		}
 	}

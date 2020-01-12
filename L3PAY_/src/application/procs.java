@@ -63,6 +63,31 @@ public class procs {
 			
 		}*/
 		
+		public boolean aniadirMovimiento(String name, int cuenta, double dinero) {
+			Connection con = null;
+			boolean retorno=false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("INSERT INTO bill (billname, billprice, accountnum) VALUES(?,?,?)");
+				ps.setString(1, name);
+				ps.setDouble(2, dinero);
+				ps.setInt(3, cuenta);
+				int res = ps.executeUpdate();
+				if(res>0) {
+					retorno = true;
+				}
+				else {
+					retorno = false; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al introducir el dinero en la tabla bill");
+			}
+			return retorno;
+		}
+		
 		public String searchPassword(String userName){
 			Connection con = null;
 			String respuesta = null;

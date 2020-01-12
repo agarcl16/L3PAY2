@@ -37,6 +37,10 @@ public class EnviosDAO {
 			if(envia.enviarDinero(cuentaEnvia, newDineroEnvia)==false || envia.enviarDinero(cuentaRecibe, newDineroRecibe) == false){
 				return false;
 			}
+			//aniadimos movimientos
+			if((!envia.aniadirMovimiento("pago a "+this.receiveUser, cuentaEnvia, 0-dinero))||(!envia.aniadirMovimiento("pago de "+this.sendUser, cuentaRecibe, dinero))) {
+				return false;
+			}
 			return true;
 			
 		}catch(Exception e) {
