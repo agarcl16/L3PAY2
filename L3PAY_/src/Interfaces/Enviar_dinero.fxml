@@ -33,7 +33,7 @@
                                  </children>
                               </AnchorPane>
                               <Button fx:id="cancelar_con" layoutX="169.0" layoutY="292.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
-                              <Label fx:id="mesaje1" layoutX="186.0" layoutY="231.0" />
+                              <Label fx:id="mensaje1" layoutX="186.0" layoutY="231.0" />
                            </children>
                         </Pane>
                      </content>
