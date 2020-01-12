@@ -7,7 +7,10 @@ public class BoteVO {
 	}
 	public boolean creaBote(String namePot) {
 		System.out.println("hola2.1");
-		if(controlador.creaBote(namePot, MainController.elUsuario)) return true;
+		if(controlador.creaBote(namePot, MainController.elUsuario)) {
+				System.out.println("hola 2.2");
+			return true;
+		}
 		return false;
 	}
 	public boolean aniadePersona(String usuario, String bote) {

@@ -93,7 +93,7 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("INSERT INTO pot (potname, potleader, missingmoney) VALUES(?,?,?)");
+				ps = con.prepareStatement("INSERT INTO pot (potname, potleader, potstatus) VALUES(?,?,?)");
 				ps.setString(1, namePot);
 				ps.setString(2, userLeader);
 				ps.setDouble(3, 0.0);
