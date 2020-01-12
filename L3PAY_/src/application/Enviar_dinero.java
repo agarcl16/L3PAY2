@@ -68,8 +68,7 @@ public class Enviar_dinero {
 		if(name1.getText().equals("")||cost1.getText().equals("")||password1.getText().equals("")){
 			mensaje1.setText("error");
 		}
-		else if(truePassword.equals(password1.getText())) {
-			System.out.print(truePassword+" "+password1.getText());
+		else if(!truePassword.equals(password1.getText())) {
 			mensaje1.setText("contrasena invalida");
 		}
 		else {
@@ -100,7 +99,7 @@ public class Enviar_dinero {
 			
 			mensaje2.setText("error. No existe el ususario");
 		}
-		else if(truePassword.equals(password2.getText())) {
+		else if(!truePassword.equals(password2.getText())) {
 
 			mensaje2.setText("error. Contrasena invalida");
 		}
