@@ -24,7 +24,6 @@ public class BoteDAO {
 				}
 			}
 		}
-		
 		return false;
 	}
 	public boolean creaBote() {
