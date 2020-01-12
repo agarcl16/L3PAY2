@@ -16,7 +16,7 @@
             <Label layoutX="153.0" layoutY="26.0" text="GESTIONAR BOTE" />
             <TextField layoutX="201.0" layoutY="72.0" />
             <Button layoutX="172.0" layoutY="134.0" mnemonicParsing="false" text="Aceptar" />
-            <Label layoutX="43.0" layoutY="213.0" text="Saldo disponible" />
+            <Label layoutX="43.0" layoutY="213.0" text="Saldo gastado" />
             <TextField layoutX="227.0" layoutY="209.0" prefHeight="25.0" prefWidth="98.0" />
             <Label layoutX="325.0" layoutY="213.0" text="\$" />
             <Label layoutX="33.0" layoutY="305.0" text="Integrantes del bote" />

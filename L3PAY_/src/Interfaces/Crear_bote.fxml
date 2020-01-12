@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-
-<BorderPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.Crea_bote">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Crea_bote">
    <top>
       <AnchorPane prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="95.0" text="Introduce el numero del participante" />
-            <TextField layoutX="229.0" layoutY="91.0" />
-            <Button layoutX="141.0" layoutY="135.0" mnemonicParsing="false" text="Anadir participante" />
+            <Label layoutX="14.0" layoutY="95.0" text="Introduce el usuario del participante" />
+            <TextField fx:id="nameUser" layoutX="229.0" layoutY="91.0" />
+            <Button fx:id="aniadirPersona" layoutX="141.0" layoutY="135.0" mnemonicParsing="false" text="Anadir participante" />
             <Label layoutX="65.0" layoutY="40.0" text="Nombre del bote" />
-            <TextField layoutX="229.0" layoutY="36.0" />
+            <TextField fx:id="namePot" layoutX="229.0" layoutY="36.0" />
             <Label layoutX="40.0" layoutY="206.0" text="Seleccionar cantidad inicial" />
-            <TextField layoutX="261.0" layoutY="202.0" prefHeight="25.0" prefWidth="86.0" />
+            <TextField fx:id="costPot" layoutX="261.0" layoutY="202.0" prefHeight="25.0" prefWidth="86.0" />
             <Label layoutX="347.0" layoutY="206.0" text="\$" />
-            <Button layoutX="172.0" layoutY="273.0" mnemonicParsing="false" text="Aceptar" />
+            <Button layoutX="172.0" layoutY="273.0" mnemonicParsing="false" onAction="#crearBote" text="Aceptar" />
             <Button fx:id="cancelar_pot" layoutX="169.0" layoutY="332.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+            <Label fx:id="mensaje" layoutX="186.0" layoutY="241.0" />
          </children>
       </AnchorPane>
    </top>
