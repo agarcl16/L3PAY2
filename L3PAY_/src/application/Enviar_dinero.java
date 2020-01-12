@@ -69,6 +69,7 @@ public class Enviar_dinero {
 			mensaje1.setText("error");
 		}
 		else if(truePassword.equals(password1.getText())) {
+			System.out.print(truePassword+" "+password1.getText());
 			mensaje1.setText("contrasena invalida");
 		}
 		else {
@@ -99,7 +100,7 @@ public class Enviar_dinero {
 			
 			mensaje2.setText("error. No existe el ususario");
 		}
-		else if(truePassword.contentEquals(password2.getText())) {
+		else if(truePassword.equals(password2.getText())) {
 
 			mensaje2.setText("error. Contrasena invalida");
 		}
