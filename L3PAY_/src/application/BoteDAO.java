@@ -9,6 +9,7 @@ public class BoteDAO {
 		return true;
 	}
 	public boolean aniadePersona(String user, String namePot) {
+		System.out.println("hola2");
 		//el bote existe? aniades persona directa
 		//sino, se crea y se pone al lider y luego se aniade
 		if(controlador.searchBote(namePot)) {
@@ -17,8 +18,11 @@ public class BoteDAO {
 		else {
 			//creamos el bote y aniadimos lider y la persona
 			if(controlador.creaBote(namePot)) {
+				System.out.println("hola3");
 				if(controlador.aniadePersona(MainController.elUsuario, namePot)) {
+					System.out.println("hola4");
 					if(controlador.aniadePersona(user, namePot)) {
+						System.out.println("hola5");
 						return true;
 					}
 				}
