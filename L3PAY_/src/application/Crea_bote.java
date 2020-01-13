@@ -55,6 +55,13 @@ public class Crea_bote {
 	
 	@FXML
 	public void meterDinero(ActionEvent event) {
+		bote = new BoteDAO();
+		if(potCode.getText().equals("")||costPot.getText().equals("")) {
+			mensaje.setText("Error. Rellene los campos pot code y pot cost");
+		}
+		else if(bote.aniadeDinero(potCode.getText(), costPot.getText())) {
+			mensaje.setText("Dinero aniadido al bote por todos los integrantes");
+		}
 		
 	}
 	

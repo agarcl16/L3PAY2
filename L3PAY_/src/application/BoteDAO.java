@@ -5,8 +5,33 @@ public class BoteDAO {
 	public BoteDAO() {
 		controlador = new BoteVO();
 	}
-	public boolean aniadeDinero(){
-		return true;
+	public boolean aniadeDinero(String potCode, String cantidad){
+		int codigoBote;
+		float dinero;
+		if(!comprueba(potCode)) {
+			return false;
+		}
+		if(!comprueba2(cantidad)) {
+			return false;
+		}
+		codigoBote = Integer.parseInt(potCode);
+		dinero = Float.parseFloat(cantidad);
+		if(controlador.searchBote2(codigoBote)) {
+			if(controlador.getLeader(codigoBote).equals(MainController.elUsuario)) {
+				if(controlador.aniadeDinero(codigoBote, dinero)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	public boolean comprueba2(String cadena) {
+		try {
+			Float.parseFloat(cadena);
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	public boolean aniadePersona(String user, String namePot, String potCode) {
 		//el bote existe? aniades persona directa

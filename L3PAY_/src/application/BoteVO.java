@@ -32,9 +32,24 @@ public class BoteVO {
 			}
 		}
 	}
+	
+	public boolean aniadeDinero(int potID, float dinero) {
+		if(controlador.aniadirDineroBote(potID, dinero)){
+			
+		}
+		return true;
+	}
+	
 	public boolean searchBote(int potID, String namePot) {
 		String pot = controlador.searchPot(potID);
 		if(pot.equals(namePot)) {
+			return true;
+		}
+		return false;
+	}
+	public boolean searchBote2(int potID) {
+		String pot = controlador.searchPot(potID);
+		if(pot!=null) {
 			return true;
 		}
 		return false;
