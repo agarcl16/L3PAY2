@@ -106,6 +106,7 @@ public class AdminDAO {
 	
 	@FXML
 	public void restaura(ActionEvent event) {
+		System.out.println("hola");
 		Restauracion reset = new Restauracion();
 		reset.restaura();
 	}
