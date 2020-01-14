@@ -48,6 +48,7 @@ public class AdminDAO {
 			limpiaCajas();
 		}
 		else {
+			mensaje.setText("Persona borrada correctamente");
 			controlador.removeUser(user.getText());
 		}
 	}
