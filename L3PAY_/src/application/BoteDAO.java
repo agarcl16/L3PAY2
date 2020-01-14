@@ -47,6 +47,10 @@ public class BoteDAO {
 		return false;
 	}
 	
+	public String integrantes(int potCode) {
+		return controlador.getIntegrantes(potCode);
+	}
+	
 	public boolean aniadePersona(String user, String namePot, String potCode) {
 		//el bote existe? aniades persona directa
 		//sino, se crea y se pone al lider y luego se aniade

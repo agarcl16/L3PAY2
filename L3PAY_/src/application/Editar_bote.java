@@ -58,6 +58,8 @@ public class Editar_bote{
 		}
 	}
 	
+	
+	
 	public void addUser(String user) {
 		bote = new BoteDAO();
 		if(bote.aniadePersona(user, Ges_pot.codigoBote)) {

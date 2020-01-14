@@ -134,6 +134,26 @@ public class procs {
 			}	
 			return respuesta;
 		}
+		public String getIntegrantesBote(int potID) {
+			Connection con = null;
+			String respuesta = null;
+			try {
+				con = getConnection();
+				ps= con.prepareStatement("SELECT participantname FROM participant WHERE potcall = ?");
+				ps.setInt(1, potID);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getString("participantname");
+				}
+				else {
+					respuesta = null;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar usuario del bote");
+			}	
+			return respuesta;
+		}
 		
 		public String getLeader(int code) {
 			Connection con = null;

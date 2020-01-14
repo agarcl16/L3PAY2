@@ -33,6 +33,10 @@ public class BoteVO {
 		}
 	}
 	
+	public String getIntegrantes(int potCode) {
+		return controlador.getIntegrantesBote(potCode);
+	}
+	
 	public boolean aniadePersona(String usuario, int codigo) {
 		
 			if(controlador.search(usuario)) {
