@@ -244,7 +244,7 @@ public class procs {
 		
 		public boolean removeFromPot(String user) {
 			Connection con = null;
-			boolean respuesta = false;
+			boolean respuesta = true;
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("DELETE FROM participant WHERE participantname = ?");
@@ -469,7 +469,7 @@ public class procs {
 		
 		public boolean removeUser(String name) {
 			Connection con = null;
-			boolean respuesta = false;
+			boolean respuesta = true;
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("DELETE FROM users WHERE username = ?");
@@ -534,6 +534,27 @@ public class procs {
 			}
 		}*/
 
+		public boolean removeCuenta(int cuenta) {
+			Connection con = null;
+			boolean respuesta = true;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("DELETE FROM account WHERE accountnumber = ?");
+				ps.setInt(1, cuenta);
+				ps.executeUpdate();
+				/*if(rs.next()) {
+					respuesta = true;
+				}
+				else {
+					respuesta = false;
+				}*/
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al eliminar");
+			}	
+			return respuesta;
+		}
+		
 		public int cuenta(String dni) {
 			Connection con = null;
 			int respuesta = 0;
