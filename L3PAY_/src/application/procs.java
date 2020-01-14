@@ -249,13 +249,13 @@ public class procs {
 				con = getConnection();
 				ps = con.prepareStatement("DELETE FROM participant WHERE participantname = ?");
 				ps.setString(1, user);
-				rs = ps.executeQuery();
-				if(rs.next()) {
+				ps.executeUpdate();
+				/*if(rs.next()) {
 					respuesta = true;
 				}
 				else {
 					respuesta = false;
-				}
+				}*/
 				con.close();
 			}catch(Exception e) {
 				System.err.println("Error al eliminar");
