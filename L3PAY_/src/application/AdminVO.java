@@ -1,17 +1,19 @@
 package application;
 
+import java.sql.Connection;
+
 public class AdminVO {
 	private procs controlador;
 	public AdminVO() {
 		controlador = new procs();
 	}
-	public boolean removeUser() {
+	public boolean removeUser(String user) {
 		return true;
 	}
-	public boolean removeCuenta() {
+	public boolean removeCuenta(String cuenta) {
 		return true;
 	}
-	public boolean removeBote() {
+	public boolean removeBote(String bote) {
 		return true;
 	}
 	public boolean searchUser(String name) {
@@ -22,4 +24,14 @@ public class AdminVO {
 			return false;
 		}
 	}
+	public boolean searchCuenta(int cuenta) {
+		if(controlador.searchAccount2(cuenta)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
 }

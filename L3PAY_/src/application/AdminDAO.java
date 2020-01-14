@@ -47,12 +47,32 @@ public class AdminDAO {
 			mensaje.setText("Introduce un nombre de usuario existente");
 			limpiaCajas();
 		}
+		else {
+			controlador.removeUser(user.getText());
+		}
+	}
+	
+	public boolean comprueba(String cadena) {
+		try {
+			Integer.parseInt(cadena);
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	
 	@FXML
 	public void removeAccount(ActionEvent event) {
 		controlador = new AdminVO();
-		
+		if(!comprueba(cuenta.getText())) {
+			mensaje.setText("Introduce un numero de cuenta valido");
+		}
+		else if(controlador.searchCuenta(Integer.parseInt(cuenta.getText()))) {
+			mensaje.setText("El numero de cuenta no existe");
+		}
+		else {
+			
+		}
 	}
 	
 	@FXML

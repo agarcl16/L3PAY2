@@ -467,6 +467,47 @@ public class procs {
 			return respuesta;
 		}
 		
+		public boolean removeUser(String name) {
+			Connection con = null;
+			boolean respuesta = false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("DELETE FROM users WHERE username = ?");
+				ps.setString(1, name);
+				ps.executeUpdate();
+				/*if(rs.next()) {
+					respuesta = true;
+				}
+				else {
+					respuesta = false;
+				}*/
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al eliminar");
+			}	
+			return respuesta;
+		}
+		
+		public boolean searchAccount2(int num) {
+			Connection con = null;
+			boolean respuesta = false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM account WHERE accountnumber = ?");
+				ps.setInt(1, num);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = true;
+				}
+				else {
+					respuesta = false;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar");
+			}	
+			return respuesta;
+		}
 		
 		/*public void remove(user){
 
