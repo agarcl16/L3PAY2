@@ -85,35 +85,8 @@ public class Ges_pot {
 		}
 	}
 	
-	@FXML 
-	public void verIntegrantes(ActionEvent event) throws Exception{
-		Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Integrantes.fxml"));
-		Scene scene = new Scene(root,400,400);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		primaryStage.setScene(scene);
-		primaryStage.show();
-	}
+
 	
-	@FXML
-	public void muestraIntegrantes(ActionEvent event) {
-		bote = new BoteDAO();
-		/*if(namePot.getText().equals("")) {
-			mensaje.setText("No existe ese bote");
-			limpiaCajas();
-		}
-		if(!comprueba(namePot.getText())) {
-			mensaje.setText("No existe ese bote");
-			limpiaCajas();
-		}
-		int potCode;
-		potCode = Integer.parseInt(namePot.getText());
-		if(!bote.search(potCode)) {
-			mensaje.setText("No existe ese bote");
-			limpiaCajas();
-		}*/
-		//String respuesta = bote.integrantes(Integer.parseInt(Ges_pot.codigoBote));
-		mensajeIntegrantes.setText(Ges_pot.codigoBote);
-	}
 	
 	@FXML
 	public void buscaBote(ActionEvent event) throws Exception{
@@ -144,6 +117,7 @@ public class Ges_pot {
 			}
 			else {
 				dineroRestante.setText(String.valueOf(dineroActual));
+				mensajeIntegrantes.setText(bote.integrantes(potCode));
 			}
 		}
 	}

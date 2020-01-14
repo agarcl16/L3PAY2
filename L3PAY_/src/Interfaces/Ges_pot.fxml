@@ -26,10 +26,10 @@
             <Label layoutX="47.0" layoutY="247.0" text="Saldo restante" />
             <TextField fx:id="dineroRestante" layoutX="228.0" layoutY="243.0" prefHeight="25.0" prefWidth="97.0" />
             <Label layoutX="325.0" layoutY="247.0" text="\$" />
-            <Button fx:id="cancel_gespot" layoutX="306.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancel" text="Cerrar" />
-            <Button fx:id="button_edit" layoutX="90.0" layoutY="349.0" mnemonicParsing="false" onAction="#editar" text="Editar bote" />
+            <Button fx:id="cancel_gespot" layoutX="337.0" layoutY="362.0" mnemonicParsing="false" onAction="#cancel" text="Cerrar" />
+            <Button fx:id="button_edit" layoutX="79.0" layoutY="350.0" mnemonicParsing="false" onAction="#editar" text="Editar bote" />
             <Label fx:id="mensaje" layoutX="39.0" layoutY="107.0" />
-            <Button layoutX="222.0" layoutY="310.0" mnemonicParsing="false" onAction="#verIntegrantes" text="Ver integrantes" />
+            <Label fx:id="mensajeIntegrantes" layoutX="200.0" layoutY="305.0" />
          </children>
       </AnchorPane>
    </center>
