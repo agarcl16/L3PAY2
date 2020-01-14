@@ -18,7 +18,7 @@ public class BoteVO {
 		}
 		else {
 			if(controlador.search(usuario)) {
-				if(controlador.searchUserPot(usuario)!=-1) {
+				if(!controlador.searchUserPot(usuario).equals("no")) {
 					return false;
 				}
 				String dni = controlador.getDni(usuario);
@@ -40,7 +40,7 @@ public class BoteVO {
 	public boolean aniadePersona(String usuario, int codigo) {
 		
 			if(controlador.search(usuario)) {
-				if(controlador.searchUserPot(usuario)!=-1) {
+				if(!controlador.searchUserPot(usuario).equals("no")) {
 					return false;
 				}
 				String dni = controlador.getDni(usuario);
