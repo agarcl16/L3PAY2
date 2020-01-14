@@ -24,7 +24,12 @@ public class AdminVO {
 		return true;
 	}
 	public boolean removeBote(int bote) {
-		return true;
+		if(controlador.removeBote(bote)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	public boolean searchUser(String name) {
 		if(controlador.search(name)) {
