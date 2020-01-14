@@ -72,7 +72,7 @@ public class AdminDAO {
 		if(!comprueba(cuenta.getText())) {
 			mensaje.setText("Introduce un numero de cuenta valido");
 		}
-		else if(controlador.searchCuenta(Integer.parseInt(cuenta.getText()))) {
+		else if(!controlador.searchCuenta(Integer.parseInt(cuenta.getText()))) {
 			mensaje.setText("El numero de cuenta no existe");
 		}
 		else {
@@ -88,7 +88,7 @@ public class AdminDAO {
 	@FXML
 	public void removePot(ActionEvent event) {
 		controlador = new AdminVO();
-		
+		//if
 	}
 	
 	@FXML

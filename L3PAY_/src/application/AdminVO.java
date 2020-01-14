@@ -34,6 +34,11 @@ public class AdminVO {
 			return false;
 		}
 	}
+	
+	public boolean searchBote(int bote) {
+		return true;
+	}
+	
 	public boolean searchCuenta(int cuenta) {
 		if(controlador.searchAccount2(cuenta)) {
 			return true;
