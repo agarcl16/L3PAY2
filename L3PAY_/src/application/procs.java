@@ -143,16 +143,14 @@ public class procs {
 				ps.setInt(1, potID);
 				rs = ps.executeQuery();
 				while(rs.next()) {
-					respuesta += rs.getString("participantname");
+					respuesta += rs.getString("participantname")+",";
 				}
-				if(!rs.next()) {
-					respuesta = null;
-				}
+				
 				con.close();
 			}catch(Exception e) {
 				System.err.println("Error al buscar usuario del bote");
 			}	
-			return respuesta;
+			return respuesta.substring(0, respuesta.length()-1);
 		}
 		
 		public String getLeader(int code) {
