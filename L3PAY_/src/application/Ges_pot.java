@@ -93,6 +93,10 @@ public class Ges_pot {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		bote = new BoteDAO();
+	}
+	
+	@FXML
+	public void muestraIntegrantes(ActionEvent event) {
 		if(namePot.getText().equals("")) {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
