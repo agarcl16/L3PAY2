@@ -73,7 +73,7 @@ public class BoteVO {
 	}
 	
 	public boolean removeUser(String user) {
-		boolean respuesta = controlador.removeFromPot(controlador.getDni(user));
+		boolean respuesta = controlador.removeFromPot(user);
 		return respuesta;
 	}
 	
