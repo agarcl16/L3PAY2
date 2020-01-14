@@ -17,7 +17,7 @@
             <TextField fx:id="cuenta" layoutX="151.0" layoutY="208.0" />
             <TextField fx:id="bote" layoutX="151.0" layoutY="264.0" />
             <Label fx:id="mensaje" layoutX="369.0" layoutY="404.0" />
-            <Button layoutX="328.0" layoutY="497.0" mnemonicParsing="false" text="RESTAURAR BBDD" />
+            <Button layoutX="328.0" layoutY="497.0" mnemonicParsing="false" onAction="#restaura" text="RESTAURAR BBDD" />
          </children>
       </AnchorPane>
    </children>
