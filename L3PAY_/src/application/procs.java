@@ -247,10 +247,34 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("UPDATE pot SET (potstatus,missingmoney) VALUES (?,?) WHERE potID = ?");
+				ps = con.prepareStatement("UPDATE pot SET potstatus = ? WHERE potID = ?");
 				ps.setFloat(1, cantidad);
-				ps.setFloat(2, cantidad);
-				ps.setInt(3,potID);
+				ps.setInt(2,potID);
+				
+				int res = ps.executeUpdate();
+				if(res>0) {
+					retorno = true;
+				}
+				else {
+					retorno = false; 	
+				}
+				con.close();
+				return retorno;
+				
+			}catch(Exception e) {
+				System.err.println("Error al aniadir dinero bote");
+			}
+			return retorno;
+		}
+		
+		public boolean aniadirDineroBote2(int potID, float cantidad) {
+			Connection con = null;
+			boolean retorno=false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("UPDATE pot SET missingmoney = ? WHERE potID = ?");
+				ps.setFloat(1, cantidad);
+				ps.setInt(2,potID);
 				
 				int res = ps.executeUpdate();
 				if(res>0) {

@@ -59,7 +59,7 @@ public class BoteVO {
 	
 	public boolean updatePotMoney(int code, float newMoney){
 		float nuevoDinero = controlador.getMoney(code)+newMoney;
-		if(controlador.aniadirDineroBote(code, nuevoDinero)) {
+		if(controlador.aniadirDineroBote(code, nuevoDinero)&&controlador.aniadirDineroBote2(code, nuevoDinero)) {
 			return true;
 		}
 		else {
