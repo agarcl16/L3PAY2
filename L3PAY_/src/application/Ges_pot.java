@@ -97,7 +97,7 @@ public class Ges_pot {
 	@FXML
 	public void muestraIntegrantes(ActionEvent event) {
 		bote = new BoteDAO();
-		if(namePot.getText().equals("")) {
+		/*if(namePot.getText().equals("")) {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
 		}
@@ -110,9 +110,9 @@ public class Ges_pot {
 		if(!bote.search(potCode)) {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
-		}
-		//String respuesta = bote.integrantes(potCode);
-		mensajeIntegrantes.setText("hola");
+		}*/
+		String respuesta = bote.integrantes(Integer.parseInt(Ges_pot.codigoBote));
+		mensajeIntegrantes.setText(respuesta);
 	}
 	
 	@FXML
