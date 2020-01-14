@@ -247,7 +247,7 @@ public class procs {
 			boolean respuesta = false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("REMOVE * FROM participant WHERE participantname = ?");
+				ps = con.prepareStatement("REMOVE * FROM participant WHERE usercall = ?");
 				ps.setString(1, user);
 				rs = ps.executeQuery();
 				if(rs.next()) {
