@@ -76,7 +76,7 @@ public class Ges_pot {
 	@FXML
 	public void buscaBote(ActionEvent event) throws Exception{
 		bote = new BoteDAO();
-		if(namePot.getText().contentEquals("")) {
+		if(namePot.getText().equals("")) {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
 		}
