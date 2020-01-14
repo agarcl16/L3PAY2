@@ -19,6 +19,8 @@ public class AdminDAO {
 	@FXML
 	public Button cancel;
 	
+	private AdminVO controlador;
+	
 	@FXML
 	public TextField user;
 	@FXML
@@ -36,22 +38,39 @@ public class AdminDAO {
 	
 	@FXML
 	public void removeUser(ActionEvent event) {
-		
+		controlador = new AdminVO();
+		if(user.getText().equals("")) {
+				mensaje.setText("Introduce un nombre de usuario");
+				limpiaCajas();
+		}
+		else if(!controlador.searchUser(user.getText())) {
+			mensaje.setText("Introduce un nombre de usuario existente");
+			limpiaCajas();
+		}
 	}
 	
 	@FXML
 	public void removeAccount(ActionEvent event) {
+		controlador = new AdminVO();
 		
 	}
 	
 	@FXML
 	public void removePot(ActionEvent event) {
+		controlador = new AdminVO();
 		
 	}
 	
 	@FXML
 	public void restaura(ActionEvent event) {
-		
+		Restauracion reset = new Restauracion();
+		reset.restaura();
+	}
+	
+	public void limpiaCajas() {
+		user.setText("");
+		cuenta.setText("");
+		bote.setText("");
 	}
 	
 }

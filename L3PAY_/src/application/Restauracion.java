@@ -9,6 +9,10 @@ import java.util.logging.Logger;
 
 public class Restauracion {
 
+	public Restauracion() {
+		
+	}
+	
 	public void restaura() {
 	
 		try {
