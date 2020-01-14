@@ -100,7 +100,8 @@ public class Ges_pot {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
 		}
-		mensajeIntegrantes.setText(bote.integrantes(potCode));
+		String repuesta = bote.integrantes(potCode);
+		mensajeIntegrantes.setText(repuesta);
 	}
 	
 	@FXML
