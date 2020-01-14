@@ -92,11 +92,11 @@ public class Ges_pot {
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		bote = new BoteDAO();
 	}
 	
 	@FXML
 	public void muestraIntegrantes(ActionEvent event) {
+		bote = new BoteDAO();
 		if(namePot.getText().equals("")) {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
