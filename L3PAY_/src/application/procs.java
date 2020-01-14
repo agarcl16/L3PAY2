@@ -130,7 +130,7 @@ public class procs {
 				}
 				con.close();
 			}catch(Exception e) {
-				System.err.println("Error al buscar la cuenta");
+				System.err.println("Error al buscar usuario del bote");
 			}	
 			return respuesta;
 		}
