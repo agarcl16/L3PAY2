@@ -59,7 +59,8 @@ public class BoteVO {
 	
 	public boolean updatePotMoney(int code, float newMoney){
 		float nuevoDinero = controlador.getMoney(code)+newMoney;
-		if(controlador.aniadirDineroBote(code, nuevoDinero)&&controlador.aniadirDineroBote2(code, nuevoDinero)) {
+		float dineromissing = controlador.getMoney2(code)+newMoney;
+		if(controlador.aniadirDineroBote(code, nuevoDinero)&&controlador.aniadirDineroBote2(code, dineromissing)) {
 			return true;
 		}
 		else {
@@ -69,6 +70,11 @@ public class BoteVO {
 	
 	public String getIntegrantes(int potCode) {
 		return controlador.getIntegrantesBote(potCode);
+	}
+	
+	public boolean removeUser(String user) {
+		boolean respuesta = controlador.removeFromPot(user);
+		return respuesta;
 	}
 	
 	public boolean aniadePersona(String usuario, int codigo) {
@@ -90,6 +96,10 @@ public class BoteVO {
 	}	
 	public float getMoney(int potCode) {
 		return controlador.getMoney(potCode);
+	}
+	
+	public float getMoney2(int potCode) {
+		return controlador.getMoney2(potCode);
 	}
 	
 	public boolean aniadeDinero(int potID, float dinero) {

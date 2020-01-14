@@ -136,6 +136,10 @@ public class BoteDAO {
 		return false;
 	}
 	
+	public boolean removeUser(String user) {
+		return controlador.removeUser(user);
+	}
+	
 	public boolean search(int potCode) {
 		if(controlador.searchBote2(potCode)) {
 			return true;
@@ -147,6 +151,10 @@ public class BoteDAO {
 	
 	public float money(int potCode) {
 		return controlador.getMoney(potCode);
+	}
+	
+	public float money2(int potCode) {
+		return controlador.getMoney2(potCode);
 	}
 	
 	public String leader(int potCode) {

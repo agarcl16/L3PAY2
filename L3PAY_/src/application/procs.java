@@ -242,6 +242,48 @@ public class procs {
 			return respuesta;
 		}
 		
+		public boolean removeFromPot(String user) {
+			Connection con = null;
+			boolean respuesta = false;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("REMOVE * FROM participant WHERE participantname = ?");
+				ps.setString(1, user);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = true;
+				}
+				else {
+					respuesta = false;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al eliminar");
+			}	
+			return respuesta;
+		}
+		
+		public float getMoney2(int potCode) {
+			Connection con = null;
+			float respuesta = -1;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM pot WHERE potID = ?");
+				ps.setInt(1, potCode);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getFloat("missingmoney");
+				}
+				else {
+					respuesta = -1;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar la cuenta");
+			}	
+			return respuesta;
+		}
+		
 		public boolean aniadirDineroBote(int potID, float cantidad) {
 			Connection con = null;
 			boolean retorno=false;

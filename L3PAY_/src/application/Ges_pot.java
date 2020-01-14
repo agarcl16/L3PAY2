@@ -111,12 +111,15 @@ public class Ges_pot {
 		}
 		else {
 			float dineroActual = bote.money(potCode);
+			float dineroRestantes = bote.money2(potCode);
 			if(dineroActual==-1) {
 				mensaje.setText("No habia dinero en este bote");
 				limpiaCajas();
 			}
 			else {
-				dineroRestante.setText(String.valueOf(dineroActual));
+				dineroRestante.setText(String.valueOf(dineroRestantes));
+				dineroInicial.setText(String.valueOf(dineroActual));
+				dineroGastado.setText(String.valueOf(dineroActual-dineroRestantes));
 				mensajeIntegrantes.setText(bote.integrantes(potCode));
 			}
 		}
