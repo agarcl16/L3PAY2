@@ -26,6 +26,8 @@ public class Ges_pot {
 	@FXML
 	public Button button_edit;
 	@FXML
+	public Button aceptar;
+	@FXML
 	public TextField namePot;
 	@FXML
 	public TextField dineroInicial;
@@ -49,7 +51,7 @@ public class Ges_pot {
 	
 	@FXML
 	public void salirIntegrantes(ActionEvent event) {
-		Stage stage = (Stage) cancel_gespot.getScene().getWindow();
+		Stage stage = (Stage) aceptar.getScene().getWindow();
 		stage.close();
 	}
 	
@@ -90,7 +92,7 @@ public class Ges_pot {
 		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 		primaryStage.setScene(scene);
 		primaryStage.show();
-		bote = new BoteDAO();
+		/*bote = new BoteDAO();
 		if(namePot.getText().equals("")) {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
@@ -106,7 +108,7 @@ public class Ges_pot {
 			limpiaCajas();
 		}
 		String respuesta = bote.integrantes(potCode);
-		mensajeIntegrantes.setText(respuesta);
+		mensajeIntegrantes.setText(respuesta);*/
 	}
 	
 	@FXML
