@@ -28,7 +28,7 @@ public class BoteDAO {
 					if((controlador.getDineroCuenta(array[i])-aPagar)<0) {
 						return false;
 					}
-					if(!controlador.updateUserMoney(array[i], aPagar)) {
+					if(!controlador.updateUserMoney(array[i], controlador.getDineroCuenta(array[i])-aPagar)) {
 						return false;
 					}
 					envios.aniadirMovimiento(array[i], envios.getCuenta(array[i]), 0-aPagar);
