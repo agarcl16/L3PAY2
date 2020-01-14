@@ -76,7 +76,12 @@ public class AdminDAO {
 			mensaje.setText("El numero de cuenta no existe");
 		}
 		else {
-			
+			if(controlador.removeCuenta(Integer.parseInt(cuenta.getText()))) {
+				mensaje.setText("Cuenta borrada correctamente");
+			}
+			else {
+				mensaje.setText("Error al eliminar la cuenta");
+			}
 		}
 	}
 	

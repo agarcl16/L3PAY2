@@ -17,7 +17,10 @@ public class AdminVO {
 		}
 		return false;
 	}
-	public boolean removeCuenta(String cuenta) {
+	public boolean removeCuenta(int cuenta) {
+		if(controlador.removeCuenta(cuenta)) {
+			return true;
+		}
 		return true;
 	}
 	public boolean removeBote(String bote) {
