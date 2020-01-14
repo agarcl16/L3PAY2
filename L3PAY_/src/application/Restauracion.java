@@ -15,6 +15,8 @@ public class Restauracion {
 	
 	public void restaura() {
 	
+		System.out.println("hola");
+		
 		try {
 		
 			Process p = Runtime.getRuntime().exec("mysql -u root -p1234 cpseguridad");
