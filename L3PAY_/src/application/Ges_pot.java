@@ -85,6 +85,11 @@ public class Ges_pot {
 	
 	@FXML 
 	public void verIntegrantes(ActionEvent event) throws Exception{
+		Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Integrantes.fxml"));
+		Scene scene = new Scene(root,400,400);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setScene(scene);
+		primaryStage.show();
 		bote = new BoteDAO();
 		if(namePot.getText().equals("")) {
 			mensaje.setText("No existe ese bote");
@@ -101,11 +106,6 @@ public class Ges_pot {
 			limpiaCajas();
 		}
 		String respuesta = bote.integrantes(potCode);
-		Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Integrantes.fxml"));
-		Scene scene = new Scene(root,400,400);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		primaryStage.setScene(scene);
-		primaryStage.show();
 		mensajeIntegrantes.setText(respuesta);
 	}
 	
