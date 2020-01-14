@@ -112,7 +112,7 @@ public class Ges_pot {
 			limpiaCajas();
 		}*/
 		//String respuesta = bote.integrantes(Integer.parseInt(Ges_pot.codigoBote));
-		mensajeIntegrantes.setText("hola");
+		mensajeIntegrantes.setText(Ges_pot.codigoBote);
 	}
 	
 	@FXML
