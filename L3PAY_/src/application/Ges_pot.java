@@ -111,8 +111,8 @@ public class Ges_pot {
 			mensaje.setText("No existe ese bote");
 			limpiaCajas();
 		}*/
-		String respuesta = bote.integrantes(Integer.parseInt(Ges_pot.codigoBote));
-		mensajeIntegrantes.setText(respuesta);
+		//String respuesta = bote.integrantes(Integer.parseInt(Ges_pot.codigoBote));
+		mensajeIntegrantes.setText("hola");
 	}
 	
 	@FXML
