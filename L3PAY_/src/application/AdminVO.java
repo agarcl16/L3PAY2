@@ -8,7 +8,7 @@ public class AdminVO {
 		controlador = new procs();
 	}
 	public boolean removeUser(String user) {
-		if(controlador.removeFromPot(user)) {
+		if(controlador.removeUser(user)) {
 			return true;
 		}
 		else {
