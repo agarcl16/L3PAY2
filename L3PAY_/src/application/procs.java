@@ -114,39 +114,38 @@ public class procs {
 			return retorno;
 		}
 		
-		public String searchUserPot(String user) {
+		public boolean searchUserPot(String user) {
 			Connection con = null;
-			String respuesta = "";
+			boolean respuesta = false;
 			try {
 				con = getConnection();
 				ps = con.prepareStatement("SELECT * FROM participant WHERE participantname = ?");
 				ps.setString(1, user);
 				rs = ps.executeQuery();
-				while(rs.next()) {
-					respuesta += String.valueOf(rs.getInt(1))+",";
-					
+				if(!rs.next()) {
+					respuesta = true;
 				}
-				if (!rs.next()){
-					respuesta = "no";
+				else {
+					respuesta = false;
 				}
 				con.close();
 			}catch(Exception e) {
 				System.err.println("Error al buscar usuario del bote");
 			}	
-			return respuesta.substring(0, respuesta.length()-1);
+			return respuesta;
 		}
 		public String getIntegrantesBote(int potID) {
 			Connection con = null;
-			String respuesta = null;
+			String respuesta = "";
 			try {
 				con = getConnection();
-				ps= con.prepareStatement("SELECT participantname FROM participant WHERE potcall = ?");
+				ps= con.prepareStatement("SELECT * FROM participant WHERE potcall = ?");
 				ps.setInt(1, potID);
 				rs = ps.executeQuery();
-				if(rs.next()) {
-					respuesta = rs.getString("participantname");
+				while(rs.next()) {
+					respuesta += rs.getString("participantname");
 				}
-				else {
+				if(!rs.next()) {
 					respuesta = null;
 				}
 				con.close();
