@@ -23,7 +23,7 @@ public class AdminVO {
 		}
 		return true;
 	}
-	public boolean removeBote(String bote) {
+	public boolean removeBote(int bote) {
 		return true;
 	}
 	public boolean searchUser(String name) {
@@ -36,7 +36,12 @@ public class AdminVO {
 	}
 	
 	public boolean searchBote(int bote) {
-		return true;
+		if(controlador.searchPot(bote)!=null) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	public boolean searchCuenta(int cuenta) {

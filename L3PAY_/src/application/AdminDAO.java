@@ -88,7 +88,20 @@ public class AdminDAO {
 	@FXML
 	public void removePot(ActionEvent event) {
 		controlador = new AdminVO();
-		//if
+		if(!comprueba(bote.getText())) {
+			mensaje.setText("Introduce un numero de bote valida");
+		}
+		if(!controlador.searchBote(Integer.parseInt(bote.getText()))) {
+			mensaje.setText("No existe ese bote");
+		}
+		else {
+			if(controlador.removeBote(Integer.parseInt(bote.getText()))){
+				mensaje.setText("Bote borrado correctamente");
+			}
+			else {
+				mensaje.setText("Error al borrar el bote");
+			}
+		}
 	}
 	
 	@FXML

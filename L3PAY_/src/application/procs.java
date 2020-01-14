@@ -195,6 +195,27 @@ public class procs {
 			return respuesta;
 		}
 		
+		public boolean removeBote(int bote) {
+			Connection con = null;
+			boolean respuesta = true;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("DELETE FROM pot WHERE potID = ?");
+				ps.setInt(1, bote);
+				ps.executeUpdate();
+				/*if(rs.next()) {
+					respuesta = true;
+				}
+				else {
+					respuesta = false;
+				}*/
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al eliminar");
+			}	
+			return respuesta;
+		}
+		
 		public boolean aniadirPersonaBote(String userName, int potID, String dni) {
 			Connection con = null;
 			boolean retorno=false;
