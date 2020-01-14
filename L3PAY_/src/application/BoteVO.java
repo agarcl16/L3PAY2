@@ -18,7 +18,7 @@ public class BoteVO {
 		}
 		else {
 			if(controlador.search(usuario)) {
-				if(controlador.searchUserPot(usuario)!=-1) {
+				if(controlador.searchUserPot(usuario)==-1) {
 					return false;
 				}
 				String dni = controlador.getDni(usuario);
@@ -33,11 +33,33 @@ public class BoteVO {
 		}
 	}
 	
+	public boolean aniadePersona(String usuario, int codigo) {
+		
+			if(controlador.search(usuario)) {
+				if(controlador.searchUserPot(usuario)==-1) {
+					return false;
+				}
+				String dni = controlador.getDni(usuario);
+				if(controlador.aniadirPersonaBote(usuario, codigo, dni)) {
+					return true;
+				}
+				return false;
+			}
+			else {
+				return false;
+			}
+		
+	}
+	
+	public float getMoney(int potCode) {
+		return controlador.getMoney(potCode);
+	}
+	
 	public boolean aniadeDinero(int potID, float dinero) {
 		if(controlador.aniadirDineroBote(potID, dinero)){
-			
+			return true;
 		}
-		return true;
+		return false;
 	}
 	
 	public boolean searchBote(int potID, String namePot) {

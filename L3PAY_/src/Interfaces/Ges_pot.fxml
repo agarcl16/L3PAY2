@@ -12,24 +12,25 @@
    <center>
       <AnchorPane prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="76.0" text="Indique el nombre del bote" />
+            <Label layoutX="14.0" layoutY="76.0" text="Indique el codigo del bote" />
             <Label layoutX="153.0" layoutY="26.0" text="GESTIONAR BOTE" />
-            <TextField layoutX="201.0" layoutY="72.0" />
-            <Button layoutX="172.0" layoutY="134.0" mnemonicParsing="false" text="Aceptar" />
+            <TextField fx:id="namePot" layoutX="201.0" layoutY="72.0" />
+            <Button fx:id="buscaBote" layoutX="172.0" layoutY="134.0" mnemonicParsing="false" text="Aceptar" />
             <Label layoutX="43.0" layoutY="213.0" text="Saldo gastado" />
-            <TextField layoutX="227.0" layoutY="209.0" prefHeight="25.0" prefWidth="98.0" />
+            <TextField fx:id="dineroGastado" layoutX="227.0" layoutY="209.0" prefHeight="25.0" prefWidth="98.0" />
             <Label layoutX="325.0" layoutY="213.0" text="\$" />
             <Label layoutX="33.0" layoutY="305.0" text="Integrantes del bote" />
             <ProgressBar layoutX="100.0" layoutY="278.0" prefWidth="200.0" progress="0.0" />
             <Label layoutX="53.0" layoutY="177.0" text="Saldo inicial" />
-            <TextField layoutX="228.0" layoutY="173.0" prefHeight="25.0" prefWidth="97.0" />
+            <TextField fx:id="dineroInicial" layoutX="228.0" layoutY="173.0" prefHeight="25.0" prefWidth="97.0" />
             <Label layoutX="325.0" layoutY="177.0" text="\$" />
             <Label layoutX="47.0" layoutY="247.0" text="Saldo restante" />
-            <TextField layoutX="228.0" layoutY="243.0" prefHeight="25.0" prefWidth="97.0" />
+            <TextField fx:id="dineroRestante" layoutX="228.0" layoutY="243.0" prefHeight="25.0" prefWidth="97.0" />
             <Label layoutX="325.0" layoutY="247.0" text="\$" />
             <ChoiceBox layoutX="202.0" layoutY="301.0" prefWidth="150.0" />
             <Button fx:id="cancel_gespot" layoutX="306.0" layoutY="349.0" mnemonicParsing="false" onAction="#cancel" text="Cerrar" />
             <Button fx:id="button_edit" layoutX="90.0" layoutY="349.0" mnemonicParsing="false" onAction="#editar" text="Editar bote" />
+            <Label fx:id="mensaje" layoutX="39.0" layoutY="107.0" />
          </children>
       </AnchorPane>
    </center>

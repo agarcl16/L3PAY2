@@ -33,6 +33,20 @@ public class BoteDAO {
 			return false;
 		}
 	}
+	public boolean aniadePersona(String user, String potCode) {
+		//el bote existe? aniades persona directa
+		//sino, se crea y se pone al lider y luego se aniade
+		int codigo;
+		if(!comprueba(potCode)) {
+			return false;
+		}
+		codigo = Integer.parseInt(potCode);
+				if(controlador.aniadePersona(user, codigo)) {
+					return true;
+				}
+		return false;
+	}
+	
 	public boolean aniadePersona(String user, String namePot, String potCode) {
 		//el bote existe? aniades persona directa
 		//sino, se crea y se pone al lider y luego se aniade
@@ -63,6 +77,25 @@ public class BoteDAO {
 			}
 		}
 		return false;
+	}
+	
+	public boolean search(int potCode) {
+		if(controlador.searchBote2(potCode)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public float money(int potCode) {
+		return controlador.getMoney(potCode);
+	}
+	
+	public String leader(int potCode) {
+		String respuesta = null;
+		respuesta = controlador.getLeader(potCode);
+		return respuesta;
 	}
 	
 	public boolean comprueba(String cadena) {

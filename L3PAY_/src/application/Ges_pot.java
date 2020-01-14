@@ -15,6 +15,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 public class Ges_pot {
 
@@ -24,17 +26,100 @@ public class Ges_pot {
 	@FXML
 	public Button button_edit;
 	@FXML
+	public static TextField namePot;
+	@FXML
+	public TextField dineroInicial;
+	@FXML
+	public TextField dineroRestante;
+	@FXML
+	public TextField dineroGastado;
+	@FXML
+	public Label mensaje;
+	
+	private BoteDAO bote;
+	
+	@FXML
 	public void cancel(ActionEvent event) {
 		Stage stage = (Stage) cancel_gespot.getScene().getWindow();
 		stage.close();
 	}
 	
 	public void editar(ActionEvent event) throws Exception {
-		Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Editar_bote.fxml"));
-		Scene scene = new Scene(root,400,400);
-		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		bote = new BoteDAO();
+		if(namePot.getText().contentEquals("")) {
+			mensaje.setText("No existe ese bote");
+			limpiaCajas();
+		}
+		if(!comprueba(namePot.getText())) {
+			mensaje.setText("No existe ese bote");
+			limpiaCajas();
+		}
+		int potCode;
+		potCode = Integer.parseInt(namePot.getText());
+		if(!bote.search(potCode)) {
+			mensaje.setText("No existe ese bote");
+			limpiaCajas();
+		}
+		if(!bote.leader(potCode).equals(MainController.elUsuario)) {
+			mensaje.setText("Usted no es el lider del bote");
+			limpiaCajas();
+		}		
+		else {
+			Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Editar_bote.fxml"));
+			Scene scene = new Scene(root,400,400);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		}
+	}
+	
+	@FXML
+	public void buscaBote(ActionEvent event) throws Exception{
+		bote = new BoteDAO();
+		if(namePot.getText().contentEquals("")) {
+			mensaje.setText("No existe ese bote");
+			limpiaCajas();
+		}
+		if(!comprueba(namePot.getText())) {
+			mensaje.setText("No existe ese bote");
+			limpiaCajas();
+		}
+		int potCode;
+		potCode = Integer.parseInt(namePot.getText());
+		if(!bote.search(potCode)) {
+			mensaje.setText("No existe ese bote");
+			limpiaCajas();
+		}
+		if(!bote.leader(potCode).equals(MainController.elUsuario)) {
+			mensaje.setText("Usted no es el lider del bote");
+			limpiaCajas();
+		}
+		else {
+			float dineroActual = bote.money(potCode);
+			if(dineroActual==-1) {
+				mensaje.setText("No habia dinero en este bote");
+				limpiaCajas();
+			}
+			else {
+				dineroRestante.setText(String.valueOf(dineroActual));
+			}
+		}
+	}
+	
+	public void limpiaCajas() {
+		namePot.setText("");
+		dineroInicial.setText("");
+		dineroRestante.setText("");
+		dineroGastado.setText("");
+	}
+	
+	public boolean comprueba(String cadena) {
+		try {
+			Integer.parseInt(cadena);
+			return true;
+		}catch(Exception e) {
+			return false;
+		}
 	}
 	
 }

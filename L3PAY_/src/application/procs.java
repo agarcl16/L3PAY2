@@ -203,6 +203,27 @@ public class procs {
 			return retorno;
 		}
 		
+		public float getMoney(int potCode) {
+			Connection con = null;
+			float respuesta = -1;
+			try {
+				con = getConnection();
+				ps = con.prepareStatement("SELECT * FROM pot WHERE potID = ?");
+				ps.setInt(1, potCode);
+				rs = ps.executeQuery();
+				if(rs.next()) {
+					respuesta = rs.getFloat("potstatus");
+				}
+				else {
+					respuesta = -1;
+				}
+				con.close();
+			}catch(Exception e) {
+				System.err.println("Error al buscar la cuenta");
+			}	
+			return respuesta;
+		}
+		
 		public boolean aniadirDineroBote(int potID, float cantidad) {
 			Connection con = null;
 			boolean retorno=false;
