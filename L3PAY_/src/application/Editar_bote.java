@@ -72,7 +72,10 @@ public class Editar_bote{
 	
 	public void removeUser(String user) {
 		bote = new BoteDAO();
-		
+		if(bote.removeUser(user)) {
+			mensaje.setText("Eliminado correctamente");
+			limpiaCajas();
+		}
 	}
 	
 	public void addMoney(String money) {
