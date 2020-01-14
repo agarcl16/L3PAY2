@@ -8,7 +8,12 @@ public class AdminVO {
 		controlador = new procs();
 	}
 	public boolean removeUser(String user) {
-		return true;
+		if(controlador.removeFromPot(user)) {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
 	public boolean removeCuenta(String cuenta) {
 		return true;

@@ -48,8 +48,12 @@ public class AdminDAO {
 			limpiaCajas();
 		}
 		else {
-			mensaje.setText("Persona borrada correctamente");
-			controlador.removeUser(user.getText());
+			if(controlador.removeUser(user.getText())){
+				mensaje.setText("Persona borrada correctamente");
+			}
+			else {
+				mensaje.setText("Error al eliminar la persona");
+			}
 		}
 	}
 	
