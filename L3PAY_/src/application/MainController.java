@@ -60,7 +60,14 @@ public class MainController {
 		//habria que comprobar en toda la base de datos
 		boolean comprobacion;
 		comprobacion = inicio.accesoUsuario(usuario.getText(), contrasenia.getText());
-		if(comprobacion) {
+		if(usuario.getText().equals("root")&&contrasenia.getText().equals("root")) {
+			Parent root = FXMLLoader.load(getClass().getResource("/Interfaces/Admin.fxml"));
+			Scene scene = new Scene(root,600,600);
+			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setScene(scene);
+			primaryStage.show();
+		}
+		else if(comprobacion) {
 			myMessage2.setText("Sign in Success");
 				this.elUsuario = usuario.getText();
 				//Usuario usuariol = new Usuario(usuario.getText());
@@ -86,7 +93,10 @@ public class MainController {
 			Mymessage.setText("Sign up Failed");
 		}
 		else {
-			if(registro.aniadirPersona(name.getText(), surname.getText(), personalID.getText(), number.getText(), user.getText(), password.getText())){
+			if(user.getText().contentEquals("root")) {
+				Mymessage.setText("This user alredy exists");
+			}
+			else if(registro.aniadirPersona(name.getText(), surname.getText(), personalID.getText(), number.getText(), user.getText(), password.getText())){
 				Mymessage.setText("Sign up Success");
 			}
 			else {
