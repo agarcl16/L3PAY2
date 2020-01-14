@@ -26,7 +26,7 @@ public class Ges_pot {
 	@FXML
 	public Button button_edit;
 	@FXML
-	public static TextField namePot;
+	public TextField namePot;
 	@FXML
 	public TextField dineroInicial;
 	@FXML
@@ -35,6 +35,8 @@ public class Ges_pot {
 	public TextField dineroGastado;
 	@FXML
 	public Label mensaje;
+	
+	public static String codigoBote;
 	
 	private BoteDAO bote;
 	
@@ -45,6 +47,7 @@ public class Ges_pot {
 	}
 	
 	public void editar(ActionEvent event) throws Exception {
+		codigoBote = namePot.getText();
 		bote = new BoteDAO();
 		if(namePot.getText().contentEquals("")) {
 			mensaje.setText("No existe ese bote");

@@ -60,7 +60,7 @@ public class Editar_bote{
 	
 	public void addUser(String user) {
 		bote = new BoteDAO();
-		if(bote.aniadePersona(user, Ges_pot.namePot.getText())) {
+		if(bote.aniadePersona(user, Ges_pot.codigoBote)) {
 			mensaje.setText("Persona anidadida correctamente");
 		}
 		else {
