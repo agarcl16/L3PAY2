@@ -31,7 +31,7 @@ public class BoteDAO {
 					if(!controlador.updateUserMoney(array[i], controlador.getDineroCuenta(array[i])-aPagar)) {
 						return false;
 					}
-					envios.aniadirMovimiento(array[i], envios.getCuenta(array[i]), 0-aPagar);
+					envios.aniadirMovimiento(array[i]+" pago al bote "+potCode, envios.getCuenta(array[i]), 0-aPagar);
 				}
 				if(controlador.aniadeDinero(codigoBote, dinero)) {
 					return true;
