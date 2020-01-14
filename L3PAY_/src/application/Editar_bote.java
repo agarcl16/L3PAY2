@@ -82,7 +82,9 @@ public class Editar_bote{
 			limpiaCajas();
 		}
 		else {
-			
+			if(bote.aniadeDineroBote(Ges_pot.codigoBote,money)){
+				mensaje.setText("Dinero anidadido correctamente");		
+			}
 		}
 		
 		

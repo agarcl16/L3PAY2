@@ -40,6 +40,44 @@ public class BoteDAO {
 		}
 		return false;
 	}
+	
+	public boolean aniadeDineroBote(String potCode, String cantidad) {
+		EnviosVO envios= new EnviosVO();
+		int codigoBote;
+		float dinero;
+		if(!comprueba(potCode)) {
+			return false;
+		}
+		if(!comprueba2(cantidad)) {
+			return false;
+		}
+		codigoBote = Integer.parseInt(potCode);
+		dinero = Float.parseFloat(cantidad);
+		if(controlador.searchBote2(codigoBote)) {
+			if(controlador.getLeader(codigoBote).equals(MainController.elUsuario)) {
+				String[] array = new String[99];
+				array = controlador.getIntegrantes(codigoBote).split(",");
+				int personas = array.length;
+				int i;
+				float aPagar = dinero/personas;
+				for(i=0;i<personas;i++) {
+					if((controlador.getDineroCuenta(array[i])-aPagar)<0) {
+						return false;
+					}
+					if(!controlador.updateUserMoney(array[i], controlador.getDineroCuenta(array[i])-aPagar)) {
+						return false;
+					}
+					envios.aniadirMovimiento(array[i]+" pago al bote "+potCode, envios.getCuenta(array[i]), 0-aPagar);
+				}
+				
+				if(controlador.updatePotMoney(codigoBote, dinero)) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 	public boolean comprueba2(String cadena) {
 		try {
 			Float.parseFloat(cadena);

@@ -247,9 +247,11 @@ public class procs {
 			boolean retorno=false;
 			try {
 				con = getConnection();
-				ps = con.prepareStatement("UPDATE pot SET potstatus = ? WHERE potID = ?");
+				ps = con.prepareStatement("UPDATE pot SET (potstatus,missingmoney) VALUES (?,?) WHERE potID = ?");
 				ps.setFloat(1, cantidad);
-				ps.setInt(2,potID);
+				ps.setFloat(2, cantidad);
+				ps.setInt(3,potID);
+				
 				int res = ps.executeUpdate();
 				if(res>0) {
 					retorno = true;

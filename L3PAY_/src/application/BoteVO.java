@@ -57,6 +57,15 @@ public class BoteVO {
 		}
 	}
 	
+	public boolean updatePotMoney(int code, float newMoney){
+		float nuevoDinero = controlador.getMoney(code)+newMoney;
+		if(controlador.aniadirDineroBote(code, nuevoDinero)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	
 	public String getIntegrantes(int potCode) {
 		return controlador.getIntegrantesBote(potCode);
