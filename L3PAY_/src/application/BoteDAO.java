@@ -6,6 +6,7 @@ public class BoteDAO {
 		controlador = new BoteVO();
 	}
 	public boolean aniadeDinero(String potCode, String cantidad){
+		EnviosVO envios= new EnviosVO();
 		int codigoBote;
 		float dinero;
 		if(!comprueba(potCode)) {
@@ -18,6 +19,20 @@ public class BoteDAO {
 		dinero = Float.parseFloat(cantidad);
 		if(controlador.searchBote2(codigoBote)) {
 			if(controlador.getLeader(codigoBote).equals(MainController.elUsuario)) {
+				String[] array = new String[99];
+				array = controlador.getIntegrantes(codigoBote).split(",");
+				int personas = array.length;
+				int i;
+				float aPagar = dinero/personas;
+				for(i=0;i<personas;i++) {
+					if((controlador.getDineroCuenta(array[i])-aPagar)<0) {
+						return false;
+					}
+					if(!controlador.updateUserMoney(array[i], aPagar)) {
+						return false;
+					}
+					envios.aniadirMovimiento(array[i], envios.getCuenta(array[i]), 0-aPagar);
+				}
 				if(controlador.aniadeDinero(codigoBote, dinero)) {
 					return true;
 				}

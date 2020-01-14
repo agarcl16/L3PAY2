@@ -33,6 +33,31 @@ public class BoteVO {
 		}
 	}
 	
+	public float getDineroCuenta(String user) {
+		String dni;
+		dni = controlador.getDni(user);
+		int retorno;
+		retorno = controlador.cuenta(dni);
+		double respuesta = controlador.dineroCuente(retorno);
+		float dinero;
+		dinero = (float) respuesta;
+		return dinero;
+	}
+	
+	public boolean updateUserMoney(String user, float dinero) {
+		String dni;
+		dni = controlador.getDni(user);
+		int retorno;
+		retorno = controlador.cuenta(dni);
+		if(controlador.enviarDinero(retorno,(double)dinero)) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	
 	public String getIntegrantes(int potCode) {
 		return controlador.getIntegrantesBote(potCode);
 	}
@@ -53,8 +78,7 @@ public class BoteVO {
 				return false;
 			}
 		
-	}
-	
+	}	
 	public float getMoney(int potCode) {
 		return controlador.getMoney(potCode);
 	}
