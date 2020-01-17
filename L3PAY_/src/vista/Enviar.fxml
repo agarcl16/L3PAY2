@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Enviar">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="cancelar_env" layoutX="169.0" layoutY="343.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+            <Label layoutX="135.0" layoutY="51.0" text="Enviar dinero a la cuenta" />
+            <Label layoutX="79.0" layoutY="115.0" text="Cantidad" />
+            <TextField layoutX="223.0" layoutY="111.0" prefHeight="25.0" prefWidth="85.0" />
+            <Label layoutX="308.0" layoutY="115.0" text="\$" />
+            <Label layoutX="73.0" layoutY="183.0" text="Contrasena" />
+            <PasswordField layoutX="191.0" layoutY="179.0" />
+            <Button layoutX="176.0" layoutY="261.0" mnemonicParsing="false" text="Enviar" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

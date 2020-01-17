@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.Pedir_dinero">
+   <center>
+      <AnchorPane prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+         <children>
+            <TabPane prefHeight="400.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Seleccionar contacto">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="400.0" prefWidth="400.0">
+                                 <children>
+                                    <Label layoutY="40.0" text="Seleccione el contacto de su lista" />
+                                    <Label layoutX="55.0" layoutY="95.0" text="Seleccione la cantidad" />
+                                    <TextField fx:id="cost1" layoutX="225.0" layoutY="95.0" prefHeight="25.0" prefWidth="100.0" />
+                                    <Label layoutX="328.0" layoutY="100.0" text="\$" />
+                                    <Button layoutX="169.0" layoutY="176.0" mnemonicParsing="false" onAction="#pedirDinero1" text="Aceptar" />
+                                    <Button fx:id="cancelar_con2" layoutX="167.0" layoutY="302.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+                                    <TextField fx:id="name1" layoutX="201.0" layoutY="36.0" />
+                                    <Label fx:id="mensaje1" layoutX="187.0" layoutY="244.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab text="Introducir número">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <AnchorPane prefHeight="400.0" prefWidth="400.0">
+                                 <children>
+                                    <Label layoutX="6.0" layoutY="36.0" text="Introduzca el número de teléfono" />
+                                    <TextField fx:id="phone2" layoutX="212.0" layoutY="36.0" />
+                                    <Label layoutX="198.0" layoutY="88.0" text="o" />
+                                    <Label layoutX="9.0" layoutY="122.0" text="Introduzca el nombre de usuario" />
+                                    <TextField fx:id="name2" layoutX="216.0" layoutY="118.0" />
+                                    <Label layoutX="46.0" layoutY="189.0" text="Introduzca la cantidad" />
+                                    <TextField fx:id="cost2" layoutX="235.0" layoutY="186.0" prefHeight="25.0" prefWidth="96.0" />
+                                    <Label layoutX="332.0" layoutY="190.0" text="\$" />
+                                    <Button layoutX="177.0" layoutY="252.0" mnemonicParsing="false" onAction="#pedirDinero1" text="Aceptar" />
+                                    <Button fx:id="cancelar_sin2" layoutX="175.0" layoutY="314.0" mnemonicParsing="false" onAction="#cancel" text="Cancelar" />
+                                    <Label fx:id="mensaje2" layoutX="192.0" layoutY="228.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
