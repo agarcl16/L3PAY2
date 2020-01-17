@@ -67,6 +67,14 @@ public class L3PAY {
 		primaryStage.show();
 	}
 	
+	public void pagarConBote(ActionEvent event) throws Exception{
+		Parent root = FXMLLoader.load(getClass().getResource("/vista/pagoBote.fxml"));
+		Scene scene = new Scene(root,400,400);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}
+	
 	public void gesPot(ActionEvent event) throws Exception{
 		Parent root = FXMLLoader.load(getClass().getResource("/vista/Ges_pot.fxml"));
 		Scene scene = new Scene(root,400,400);

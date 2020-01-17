@@ -136,6 +136,11 @@ public class BoteDAO {
 		return false;
 	}
 	
+	public boolean pagoBote(int code, float cantidad) {
+		boolean respuesta = controlador.pagoBote(code, cantidad);
+		return respuesta;
+	}
+	
 	public boolean removeUser(String user) {
 		return controlador.removeUser(user);
 	}

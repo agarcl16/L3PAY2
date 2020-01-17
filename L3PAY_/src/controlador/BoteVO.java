@@ -109,6 +109,11 @@ public class BoteVO {
 		return false;
 	}
 	
+	public boolean pagoBote(int code, float cantidad) {
+		boolean respuesta = controlador.pagoBote(code, cantidad);
+		return respuesta;
+	}
+	
 	public boolean searchBote(int potID, String namePot) {
 		String pot = controlador.searchPot(potID);
 		if(pot.equals(namePot)) {
