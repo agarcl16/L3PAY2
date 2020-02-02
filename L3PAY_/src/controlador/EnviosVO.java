@@ -26,6 +26,6 @@ public class EnviosVO {
 		public boolean aniadirMovimiento(String name, int cuenta, double dinero) {
 			boolean retorno;
 			retorno = controlador.aniadirMovimiento(name, cuenta, dinero);
-			return true;
+			return retorno;
 		}
 }

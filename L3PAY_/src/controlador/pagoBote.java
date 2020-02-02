@@ -45,10 +45,10 @@ public class pagoBote {
 		if(potCode.getText().equals("")||potCost.getText().equals("")||potConcept.getText().equals("")) {
 			mensaje.setText("Rellene todos los campos");
 		}
-		else if(comprueba(potCode.getText())) {
+		else if(!comprueba(potCode.getText())) {
 			mensaje.setText("Introduzca un codigo valido");
 		}
-		else if(comprueba2(potCost.getText())) {
+		else if(!comprueba2(potCost.getText())) {
 			mensaje.setText("Introduzca una cantidad valida");
 		}
 		else {
@@ -62,7 +62,7 @@ public class pagoBote {
 			}
 			else {
 				float dinero = controlador.money(code);
-				float newDinero = controlador.money(code) - dinero;
+				float newDinero = dinero-money;
 				if(newDinero<0) {
 					mensaje.setText("No hay sufificente saldo");
 				}
@@ -72,7 +72,7 @@ public class pagoBote {
 				}
 				else {
 					envio = new EnviosVO();
-					if(envio.aniadirMovimiento(potConcept.getText(), code, 0-money));
+					if(envio.aniadirMovimiento(potConcept.getText(), code, (double)0-money));
 				}
 			}
 			

@@ -29,7 +29,7 @@ public class Registro {
 		else {
 			comprobacion = controlador.search(user);
 			
-				if(comprobacion = true) {
+				if(comprobacion == true) {
 					return false;
 				}
 			solucion = controlador.add(name, surname, personalID, number, user, password);
