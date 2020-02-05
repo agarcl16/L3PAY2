@@ -19,6 +19,9 @@ public class EnviosDAO {
 		this.receiveUser  = UserRecibe;
 		try {
 			dinero = Double.parseDouble(cantidad);
+			if(dinero<=0) {
+				return false;
+			}
 			//Ahora sacamos los numero de cuenta de ambos usuarios
 			cuentaEnvia = envia.getCuenta(this.sendUser);
 			cuentaRecibe = envia.getCuenta(this.receiveUser);

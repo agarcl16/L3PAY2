@@ -85,8 +85,14 @@ public class Ges_pot {
 		}
 	}
 	
-
-	
+	@FXML
+	public void ayuda(ActionEvent event) throws Exception{
+		Parent root = FXMLLoader.load(getClass().getResource("/vista/ayudaGesPot.fxml"));
+		Scene scene = new Scene(root,400,400);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setScene(scene);
+		primaryStage.show();
+	}	
 	
 	@FXML
 	public void buscaBote(ActionEvent event) throws Exception{

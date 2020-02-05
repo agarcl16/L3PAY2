@@ -23,6 +23,8 @@ public class L3PAY {
 	@FXML
 	public Button cancelar_l3pay;
 	@FXML
+	public Button hola;
+	@FXML
 	private Label userName;
 	
 	public L3PAY() {
@@ -30,7 +32,7 @@ public class L3PAY {
 	}
 	
 	@FXML
-	public void ayuda() throws Exception{
+	public void ayuda(ActionEvent event) throws Exception{
 		userName.setText(MainController.elUsuario);
 		Parent root = FXMLLoader.load(getClass().getResource("/vista/ayudaL3PAY.fxml"));
 		Scene scene = new Scene(root,400,400);
@@ -38,7 +40,12 @@ public class L3PAY {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
-	
+
+	@FXML
+	public void aceptayuda(ActionEvent event) throws Exception{
+		Stage stage = (Stage) hola.getScene().getWindow();
+		stage.close();
+	}
 	public void vincular() throws Exception {
 		userName.setText(MainController.elUsuario);
 		Parent root = FXMLLoader.load(getClass().getResource("/vista/vincular_cuenta.fxml"));

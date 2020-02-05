@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.L3PAY.java">
    <children>
-      <AnchorPane layoutX="-7.0" layoutY="-8.0" prefHeight="1000.0" prefWidth="1000.0">
+      <AnchorPane layoutX="-7.0" layoutY="-8.0" maxHeight="1000.0" maxWidth="1000.0" minHeight="1000.0" minWidth="1000.0" prefHeight="1000.0" prefWidth="1000.0">
          <children>
             <ImageView fitHeight="300.0" fitWidth="368.0" layoutX="317.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
             	<image>
@@ -15,6 +16,7 @@
       			</image>
             </ImageView>
             <TextArea layoutX="22.0" layoutY="345.0" prefHeight="534.0" prefWidth="960.0" text="1: [Enviar Dinero] En esta opcion puedes realizar el pago a otro usuario mediante su nombre de usuario o su numero de telefono, indicando la cantidad que se desea &#10;pagar y la contrasena de usuario de la aplicación para confirmar el pago. Tan solo hay que darle a Aceptar para realizar el pago o cancelar si no se quiere realizar. &#10;Hay que rellenar todos los campos excepto en el caso de usuario o numero de telefono en el que solo se debera elegir una de las dos opciones.&#10;&#10;2: [Pedir Dinero] En esta opcion puedes realizar la accion de pedir dinero, en la cual deberas indicar nada mas que el nombre o numero de telefono del usuario al que &#10;solicitas y la cantidad solicitada y clickando en el boton aceptar, en el caso de no querer realizar la opcion pulsando en cancelar se abandona la ventana. Hay que &#10; rellenar todos los campos excepto en el caso de usuario o numero de telefono en el que solo se debera elegir una de las dos opciones.&#10;&#10;3: [Crear Bote] En esta opcion se puede crear un bote, el cual es el centro de nuestra aplicacion y su funcionamiento y gestion se explica en la ventana de ayuda de &#10; la gestion del bote. En cuanto a la creacion del propio bote se debe realizar en dos pasos:&#10;        -Primero indicar el numero de codigo de bote el cual si no existe creara el bote y sino servira para aniadir a nuevos participantes, siempre y cuando el que realice&#10;          dicha opcion sea el lider del grupo, es decir el que lo crea. Segundo indicar el nombre del bote que desea y el nombre del participante al que desea anadir, en el caso de &#10;          no existir el bote, crea el bote y anade a la propia persona que crea el bote y al usuario que indica (El lider es el que crea el bote); en el caso de que el bote ya este creado&#10;          simplemente anade a la persona. Hay que rellenar todos los campos y clickar en el boton anadir persona y se efectuara la accion.&#10;        -El segundo paso es anadir dinero al bote, esta cantidad es la cantidad total que entra en el bote, es decir se divide a pagar entre los distintos participantes.&#10;&#10;4: [Ingresar Dinero] En esta opcion se puede mover el dinero de tu cuenta L3PAY a tu cuenta de banco.&#10;&#10;5: [Enviar dinero a la cuenta] En esta opcion se puede enviar dinero desde tu cuenta de banco a tu cuenta L3PAY. Debe de haber una cuenta de banco vinculada.&#10;&#10;6: [Gestionar bote existente] La funcionalidad de esta opcion esta descrita en una ventana de ayuda de la gestion.&#10;&#10;7: [Pagar con Bote] En esta opcion el lider del bote puede realizar un pago con el dinero del bote en el que debe incluir el codigo del bote para ser verificado, la cantidad a pagar&#10; y el concepto del pago, y una vez aceptes se realizara el pago si existe dinero suficiente en el bote. Todos los campos han de ser rellenados.&#10;&#10;8: [Vincular cuenta] En esta opcion cada usuario puede vincular una cuenta de banco con su cuenta L3PAY para realizar movimiento. Es tan sencillo como introducir el numero&#10; de cuenta y el pin secreto de tu propia cuenta de banco. Aceptando das consentimiento del acceso a tu cuenta para la realizacion de movimiento.&#10;&#10;" />
+            <Button fx:id="hola" layoutX="476.0" layoutY="898.0" mnemonicParsing="false" onAction="#aceptayuda" text="ACEPTAR" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

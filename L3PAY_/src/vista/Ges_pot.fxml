@@ -20,16 +20,17 @@
             <Label layoutX="325.0" layoutY="213.0" text="\$" />
             <Label layoutX="33.0" layoutY="305.0" text="Integrantes del bote" />
             <ProgressBar layoutX="100.0" layoutY="278.0" prefWidth="200.0" progress="0.0" />
-            <Label layoutX="53.0" layoutY="177.0" text="Saldo inicial" />
+            <Label layoutX="53.0" layoutY="177.0" text="Saldo restante" />
             <TextField fx:id="dineroInicial" layoutX="228.0" layoutY="173.0" prefHeight="25.0" prefWidth="97.0" />
             <Label layoutX="325.0" layoutY="177.0" text="\$" />
-            <Label layoutX="47.0" layoutY="247.0" text="Saldo restante" />
+            <Label layoutX="47.0" layoutY="247.0" text="Saldo inicial" />
             <TextField fx:id="dineroRestante" layoutX="228.0" layoutY="243.0" prefHeight="25.0" prefWidth="97.0" />
             <Label layoutX="325.0" layoutY="247.0" text="\$" />
             <Button fx:id="cancel_gespot" layoutX="337.0" layoutY="362.0" mnemonicParsing="false" onAction="#cancel" text="Cerrar" />
             <Button fx:id="button_edit" layoutX="79.0" layoutY="350.0" mnemonicParsing="false" onAction="#editar" text="Editar bote" />
             <Label fx:id="mensaje" layoutX="39.0" layoutY="107.0" />
             <Label fx:id="mensajeIntegrantes" layoutX="200.0" layoutY="305.0" />
+            <Button layoutX="213.0" layoutY="350.0" mnemonicParsing="false" onAction="#ayuda" text="AYUDA" />
          </children>
       </AnchorPane>
    </center>
