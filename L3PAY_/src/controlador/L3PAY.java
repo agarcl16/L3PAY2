@@ -31,7 +31,12 @@ public class L3PAY {
 	
 	@FXML
 	public void ayuda() throws Exception{
-		
+		userName.setText(MainController.elUsuario);
+		Parent root = FXMLLoader.load(getClass().getResource("/vista/ayudaL3PAY.fxml"));
+		Scene scene = new Scene(root,400,400);
+		scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+		primaryStage.setScene(scene);
+		primaryStage.show();
 	}
 	
 	public void vincular() throws Exception {
