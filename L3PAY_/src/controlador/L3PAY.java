@@ -29,6 +29,11 @@ public class L3PAY {
 		
 	}
 	
+	@FXML
+	public void ayuda() throws Exception{
+		
+	}
+	
 	public void vincular() throws Exception {
 		userName.setText(MainController.elUsuario);
 		Parent root = FXMLLoader.load(getClass().getResource("/vista/vincular_cuenta.fxml"));
