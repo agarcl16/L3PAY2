@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.Ges_pot.java">
    <children>
       <AnchorPane layoutX="-10.0" layoutY="-9.0" maxHeight="1000.0" maxWidth="1000.0" minHeight="1000.0" minWidth="1000.0" prefHeight="1000.0" prefWidth="1000.0">
          <children>
@@ -15,7 +15,8 @@
                   <Image url="@../images/ayuda2.jpeg" />
                </image>
             </ImageView>
-            <TextArea layoutX="20.0" layoutY="340.0" prefHeight="590.0" prefWidth="970.0" text="1: [Aceptar] En esta opcion debes rellenar el campo de &quot;Indique el codigo del bote&quot; en el que el lider y solo el lider puede rellenarlo y aceptando en el boton saldra debajo &#10; la informacion conrrespondiente al diner que queda en el bote, el dinero gastado, y el dinero con el que se empezo.&#10;2: [Editar bote] En esta opcion da la oportunidad de editar aspectos del bote como anadir participante, eliminar participante o anadir dinero. Se debe rellenar solo uno de los &#10; 3 campos y rellenando lo correspondiente al aceptar se realizara la operacion indicada a no ser que haya errores en cuanto a que no exista el bote, ya exista el usuario que desea &#10; anadir, no exista el usuario que desea anadir o no se ingrese una cantidad valida al bote." />
+            <TextArea layoutX="20.0" layoutY="340.0" prefHeight="142.0" prefWidth="970.0" text="1: [Aceptar] En esta opcion debes rellenar el campo de &quot;Indique el codigo del bote&quot; en el que el lider y solo el lider puede rellenarlo y aceptando en el boton saldra debajo &#10; la informacion conrrespondiente al diner que queda en el bote, el dinero gastado, y el dinero con el que se empezo.&#10;2: [Editar bote] En esta opcion da la oportunidad de editar aspectos del bote como anadir participante, eliminar participante o anadir dinero. Se debe rellenar solo uno de los &#10; 3 campos y rellenando lo correspondiente al aceptar se realizara la operacion indicada a no ser que haya errores en cuanto a que no exista el bote, ya exista el usuario que desea &#10; anadir, no exista el usuario que desea anadir o no se ingrese una cantidad valida al bote." />
+            <Button fx:id="hola" layoutX="457.0" layoutY="530.0" mnemonicParsing="false" onAction="#aceptayuda" text="ACEPTAR" />
          </children>
       </AnchorPane>
    </children>

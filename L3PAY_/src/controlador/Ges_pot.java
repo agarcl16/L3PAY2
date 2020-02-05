@@ -28,6 +28,8 @@ public class Ges_pot {
 	@FXML
 	public Button aceptar;
 	@FXML
+	public Button hola;
+	@FXML
 	public TextField namePot;
 	@FXML
 	public TextField dineroInicial;
@@ -83,6 +85,12 @@ public class Ges_pot {
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		}
+	}
+	
+	@FXML
+	public void aceptayuda(ActionEvent event) throws Exception{
+		Stage stage = (Stage) hola.getScene().getWindow();
+		stage.close();
 	}
 	
 	@FXML
